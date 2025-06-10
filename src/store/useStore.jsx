@@ -2,10 +2,10 @@ import { create } from 'zustand'
 
 const useStore = create((set) => ({
 
-  Prds : [],
-
   likeList : [],
+  
   addLikeList : (list) => set((state) => {
+
     const exists = state.likeList.some(item => item.id === list.id);
 
     if(exists){
@@ -17,7 +17,21 @@ const useStore = create((set) => ({
         likeList : [...state.likeList, list]
       }
     }
+
   }),
+  
+  sortLikeList : (selected) => set((state) => {
+
+    const sortFn = {
+      newheart : (a, b) => new Date(b.likedAt) - new Date(a.likedAt),
+      discount : (a, b) => b.saleRate - a.saleRate,
+      priceLow : (a, b) => a.dcPrice- b.dcPrice,
+      priceHigh : (a, b) => b.dcPrice - a.dcPrice
+    };
+
+    return { likeList : [...state.likeList].sort(sortFn[selected]) }
+
+  })
 
 }))
 

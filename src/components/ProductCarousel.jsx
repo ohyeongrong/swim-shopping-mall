@@ -13,6 +13,7 @@ function ProductCarousel({products}) {
             {
                 products.map((prd) => {
                     const isLiked = likeList.some(i => i.id === prd.id);
+                    const dcPrice = Math.round(prd.price * (1 - prd.saleRate / 100));
                     return (
                         <div className="product-card" key={ prd.id }>
                                 <Link href={`/product/${prd.id}`}>
@@ -32,7 +33,7 @@ function ProductCarousel({products}) {
                                                 && <span className="discount">{ prd.saleRate }%</span>
                                             }
 
-                                            <span>{ Math.round(prd.price * (1 - prd.saleRate / 100)).toLocaleString() }원</span>
+                                            <span>{ dcPrice.toLocaleString() }원</span>
                                         </div>
                                     </div>
                                 </Link>
@@ -42,7 +43,12 @@ function ProductCarousel({products}) {
                                     className="like-button" 
                                     aria-label="좋아요"
                                     onClick={() => { 
-                                        addLikeList(prd);
+                                        addLikeList({
+                                            ...prd,
+                                            likedAt: new Date().toISOString(),
+                                            dcPrice: dcPrice
+                                        });
+                                        console.log(likeList);
                                     }}>
 
                                     {/* 좋아요 버튼 컬러 */}
