@@ -2,6 +2,12 @@ import { create } from 'zustand'
 
 const useStore = create((set) => ({
 
+  productsList : [],
+
+  addProducts: (list) => set(() => ({productsList: list})),
+
+  //mylike 페이지
+
   likeList : [],
   
   addLikeList : (list) => set((state) => {
@@ -31,7 +37,25 @@ const useStore = create((set) => ({
 
     return { likeList : [...state.likeList].sort(sortFn[selected]) }
 
-  })
+  }),
+
+  //product 페이지
+  selectedPrd : [],
+
+  thumImg : [], 
+
+  foundPrd : (prdId) => set((state) => {
+    
+      const found = state.productsList.find(item => item.id === Number(prdId));
+      
+      if (!found) return {};
+
+      return { 
+        selectedPrd : found,
+        thumImg : [found.image, ...found.thumbnails] 
+      }
+  }),
+
 
 }))
 

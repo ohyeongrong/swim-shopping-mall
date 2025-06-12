@@ -5,7 +5,7 @@ import useStore from "../store/useStore";
 
 function ProductCarousel({products}) {
 
-    const { likeList, addLikeList } = useStore();
+    const { likeList, addLikeList, productsList } = useStore();
 
     return (
 
@@ -16,7 +16,7 @@ function ProductCarousel({products}) {
                     const dcPrice = Math.round(prd.price * (1 - prd.saleRate / 100));
                     return (
                         <div className="product-card" key={ prd.id }>
-                                <Link href={`/product/${prd.id}`}>
+                                <Link to={`/product/${prd.id}`}>
                                     <div className="thumb-area">
                                         <img src={ prd.image } alt={ prd.name } />
                                     </div>
@@ -48,7 +48,6 @@ function ProductCarousel({products}) {
                                             likedAt: new Date().toISOString(),
                                             dcPrice: dcPrice
                                         });
-                                        console.log(likeList);
                                     }}>
 
                                     {/* 좋아요 버튼 컬러 */}

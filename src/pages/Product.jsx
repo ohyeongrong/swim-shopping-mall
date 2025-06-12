@@ -1,28 +1,30 @@
+import { Link, useParams } from "react-router-dom"
+import { useEffect } from "react";
+import ThumSwiper from "../components/ThumSwiper";
+import useStore from "../store/useStore";
+
 function Product() {
+
+    const { prdId } = useParams();
+    const { foundPrd } = useStore();
+
+    useEffect(()=>{
+        foundPrd(prdId);
+    },[prdId]);
+
     return (
         <>
             {/* 공용헤더 */}
 
-            {/* 상품 섬네일 영영 */}
-            <section className="prd-thum">
-                <div className="swiper-area">
-                    <ul>
-                        {/* 여기도 상품 썸네일 갯수에 따라 반복문 */}
-                        <li aria-label="1 / 3"><img src="#" alt="상품명" /></li>
-                    </ul>
-                </div>
-                {/* 프로그레스 바 */}
-                <div className="slide-pagination">
-                    <div className="progressbar-fill"></div>
-                </div>
-            </section>
+            {/* 상품 섬네일 영역 */}
+            <ThumSwiper/>
 
             {/* 상품 기본 정보 영역 */}
             <section className="prd-default-info">
                 <div className="prd-title">
-                    <button type="button">좋아요</button>
                     <Link>브랜드명</Link>
                     <p>제품명</p>
+                    <button type="button">좋아요</button>
                 </div>
                 <div className="price-info">
                     <del>159,000</del>

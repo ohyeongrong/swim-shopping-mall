@@ -20,7 +20,7 @@
     width: 100%;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    background-color: var(--gray-100);
+    background-color: var(--gray-50);
 }
 
 .thumb-area img {
@@ -73,4 +73,44 @@
     right: 6px;
     bottom: 44px;
     cursor: pointer;
+}
+
+
+
+/* 제품 상세 페이지 */
+
+.thum-area {
+    cursor: grab;
+    overflow: hidden; 
+    white-space: nowrap; 
+}
+
+.thum-area ul {
+    display: flex; 
+    aspect-ratio: 1 / 1;    
+}
+
+.thum-area li {
+    flex: 0 0 auto;
+}
+
+.thum-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+progress {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--gray-20);
+}
+progress::-webkit-progress-value {
+    background-color: var(--main-color);
 }

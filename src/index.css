@@ -3,14 +3,14 @@
 
 :root {
     /* 기본 컬러 */
-    --main-color: #1456FD;
+    --main-color: #00cdf5;
 
     /* 텍스트 컬러  */
     --txt-main-color: #000000;
-    --txt-muted-color: #767676;
+    --txt-muted-color: #4e4e4e;
 
     /* 그레이 스케일 */
-    --gray-900: #999999;
-    --gray-500: #b1b1b1;
-    --gray-100: #cccccc;
+    --gray-80: #909090;
+    --gray-50: #f2f2f2;
+    --gray-20: #fafafa;
 }

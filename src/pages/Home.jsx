@@ -1,9 +1,17 @@
 import { Link } from "react-router-dom"
 import swimwearProducts from "../data/swimwearProducts";
 import ProductCarousel from "../components/ProductCarousel";
+import { useEffect } from "react";
+import useStore from "../store/useStore";
 
 function Home() {
 
+    const { addProducts, productsList } = useStore();
+
+    useEffect(() => {
+    addProducts(swimwearProducts);
+    }, []);
+    
     return (
         <>
         {/* 헤더영역 */}
@@ -56,7 +64,7 @@ function Home() {
                         <Link>더보기</Link>
                     </span>
                 </div>
-                <ProductCarousel products={swimwearProducts} />
+                <ProductCarousel products={productsList} />
             </section>
         </main>
 

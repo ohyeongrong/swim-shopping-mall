@@ -13,20 +13,22 @@ const swimwearProducts = [
       { label: "L", stock: 3 }
     ],
     //대표 썸네일
-    image: "https://www.swim.co.kr/web/product/big/202506/b6cc451efa4f5e3bb1d0f3cca415aa43.jpg",
+    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891019/5332064dd1c0c5e8363122a38cb07111.jpg",
     thumbnails: [
-      "https://www.swim.co.kr/web/product/extra/big/202505/0ccd5ffcef76572dafdbd2e9c8403b1a.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/299586f3e4d5ffbd0cefff203f8983f4.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/049e7943fb14ee9b50a5c219d60a4fdf.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/4f74f165f4a68ccd10c930cf882e1f8d.jpg"
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891020/0ccd5ffcef76572dafdbd2e9c8403b1a.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891021/299586f3e4d5ffbd0cefff203f8983f4.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891022/049e7943fb14ee9b50a5c219d60a4fdf.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891023/4f74f165f4a68ccd10c930cf882e1f8d.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891024/a85aa40c7c66aa2d0ab240f23a1ff440.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891025/153f11606526aed2c744fa200d91e9d2.jpg",
     ],
     detailImages: [
-      "https://www.swim.co.kr/web/product/extra/big/202505/153f11606526aed2c744fa200d91e9d2.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/twinkle_lamer_top.jpg",
     ],
   },
   {
     id: 2,
-    name: "노티컬 비키니 세트 라이트블루",
+    name: "우먼 노티컬 비키니 세트 네이비",
     brand: "배럴",
     category: "여성",
     subCategory: "비키니",
@@ -37,12 +39,14 @@ const swimwearProducts = [
       { label: "090", stock: 3 },
       { label: "095", stock: 2 }
     ],
-    image: "https://cafe24img.poxo.com/ganaswim20/web/product/big/202504/1c2b0e01004444b2a04d709c75b7bdff.jpg",
+    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860784/61bf48883d9d35c093ad7d0ed009224f.jpg",
     thumbnails: [
-      "https://www.swim.co.kr/web/product/extra/big/202504/a804a76e5c1661b9977afa1beb1724c6.jpg"
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860785/525162064da83ec911708f555e12e683.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445160933/9c308ede349d6e9363e10f70db9ed62f.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860783/f195557989eab787166edd107f5c4598.jpg"
     ],
     detailImages: [
-      "https://www.swim.co.kr/web/product/extra/big/202504/f195557989eab787166edd107f5c4598.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/t_01_B5SWWBI021NAV.jpg",
     ],
   },
   {
@@ -58,16 +62,18 @@ const swimwearProducts = [
       { label: "090", stock: 2 },
       { label: "095", stock: 1 }
     ],
-    image: "https://cafe24img.poxo.com/ganaswim20/web/product/big/202505/4ddf8efccf2d7496087d68bf56a5b384.jpg",
+    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445162317/4ddf8efccf2d7496087d68bf56a5b384.jpg",
     thumbnails: [
-      "https://www.swim.co.kr/web/product/extra/big/202505/02c3a3a516c4bacc4192e3e74e4945e1.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/c7f7f00a0f2f5d2a51be8d9128e6c2c7.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/0d641df616473640c93bef98e3c62d61.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/48e991213ff92142fec2e2483c6a8fbb.jpg",
-      "https://www.swim.co.kr/web/product/extra/big/202505/8a47d09c0fe2f420ee10aa64a359a2c7.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862357/02c3a3a516c4bacc4192e3e74e4945e1.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862358/c7f7f00a0f2f5d2a51be8d9128e6c2c7.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862359/0d641df616473640c93bef98e3c62d61.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862360/48e991213ff92142fec2e2483c6a8fbb.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862361/8a47d09c0fe2f420ee10aa64a359a2c7.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862362/5e4218c4ac9ebaebb4b3c159a71261bd.jpg"
+
     ],
     detailImages: [
-      "https://www.swim.co.kr/web/product/extra/big/202505/5e4218c4ac9ebaebb4b3c159a71261bd.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_001.jpg",
     ],
   },
   {
