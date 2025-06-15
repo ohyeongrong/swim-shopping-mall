@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import ProductSwiper from "../components/ProductSwiper";
+import ProductSwiper from "@/components/ProductSwiper";
 import useStore from "../store/useStore";
 
 function Home() {
