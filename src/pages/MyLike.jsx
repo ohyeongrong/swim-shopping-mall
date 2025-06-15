@@ -1,6 +1,6 @@
 import useStore from "../store/useStore";
-import ProductCarousel from "../components/ProductCarousel";
-import ProductSort from "../components/ProductSort"
+import ProductSwiper from "../components/ProductSwiper";
+import LikeSort from "../components/LikeSort"
 
 
 function MyLike() {
@@ -9,8 +9,8 @@ function MyLike() {
     
     return (
         <>
-            <ProductSort />
-            <ProductCarousel products={likeList}/>
+            <LikeSort />
+            <ProductSwiper products={likeList}/>
         </>
     )
 }

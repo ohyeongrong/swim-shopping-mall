@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
-.product-carousel {
+
+/* 제품 스와이퍼 컴포넌트 */
+
+.product-swiper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto auto;
@@ -20,7 +23,7 @@
     width: 100%;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    background-color: var(--gray-50);
+    background-color: var(--gray-02);
 }
 
 .thumb-area img {
@@ -69,15 +72,14 @@
 
 .product-card button {
     position: absolute;
+    left: 120px;
+    bottom: 46px;
     z-index: 1;
-    right: 6px;
-    bottom: 44px;
-    cursor: pointer;
+    width: 24px;
+    height: 24px;
 }
 
-
-
-/* 제품 상세 페이지 */
+/* 제품 페이지 - 쎔네일스와이퍼 컴포넌트 */
 
 .thum-area {
     cursor: grab;
@@ -100,8 +102,6 @@
     object-fit: cover;
 }
 
-
-
 progress {
     width: 100%;
     height: 3px;
@@ -109,8 +109,150 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: var(--gray-20);
+    background-color: var(--gray-04);
 }
 progress::-webkit-progress-value {
     background-color: var(--main-color);
+}
+
+/* 제품페이지 - 탭메뉴 */
+
+.tap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.tap li {
+    /* 사이즈 수정 해야함 */
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--color-black);
+}
+
+
+/* 좋아요 버튼 */
+
+.like-button {
+    cursor: pointer;
+}
+
+
+/* 제품 상세정보 */
+
+.prd-detail-content {
+    max-height: 600px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.prd-detail-content.expanded {
+    max-height: 9999px;
+}
+
+
+.detail-more {
+    position: relative;
+}
+
+.detail-more::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 3.12rem;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%); 
+}
+
+.detail-more button {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: 1px solid var(--color-black);
+    background: var(--color-white);
+    /* 높이 사이즈 수정 */
+    height: 3.125rem;
+    gap: 6px;
+}
+
+svg {
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+
+/* 제품페이지 - 제품문의 */
+.inquiry-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.inquiry-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray-02);
+}
+
+.write-info {
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.write-info li .complete {
+    width: 43px;
+    padding: 2px 4px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    font-weight: 500;
+}
+
+.write-info li {
+    position: relative;
+}
+
+.write-info li span {
+    color: var(--txt-muted-color);
+}
+
+.write-info li:last-child::before {
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: -4px;
+    content: "";
+    width: 1px;
+    background-color: var(--gray-02);
+    height: 50%;
+}
+
+.inquiry-txt {
+    font-size: 14px;
+    display: flex;
+    gap: 4px;
+}
+
+
+/* 장바구니 페이지 */
+
+.select-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-area {
+    display: flex;
+}
+
+.total-area dl {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }

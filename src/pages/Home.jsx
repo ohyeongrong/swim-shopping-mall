@@ -1,17 +1,11 @@
 import { Link } from "react-router-dom"
-import swimwearProducts from "../data/swimwearProducts";
-import ProductCarousel from "../components/ProductCarousel";
-import { useEffect } from "react";
+import ProductSwiper from "../components/ProductSwiper";
 import useStore from "../store/useStore";
 
 function Home() {
 
-    const { addProducts, productsList } = useStore();
+    const { productsList } = useStore();
 
-    useEffect(() => {
-    addProducts(swimwearProducts);
-    }, []);
-    
     return (
         <>
         {/* 헤더영역 */}
@@ -21,7 +15,7 @@ function Home() {
                 <ul>
                     <li><Link aria-label="검색"><span>Search</span></Link></li>
                     <li>
-                        <Link aria-label="장바구니">
+                        <Link to={"/cart"} aria-label="장바구니">
                             <span>Cart</span>
                             <span aria-label="0개의 상품이 담겨 있습니다.">0</span>
                         </Link>
@@ -64,7 +58,7 @@ function Home() {
                         <Link>더보기</Link>
                     </span>
                 </div>
-                <ProductCarousel products={productsList} />
+                <ProductSwiper products={productsList} />
             </section>
         </main>
 

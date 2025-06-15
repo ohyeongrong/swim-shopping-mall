@@ -9,8 +9,17 @@
     --txt-main-color: #000000;
     --txt-muted-color: #4e4e4e;
 
-    /* 그레이 스케일 */
-    --gray-80: #909090;
-    --gray-50: #f2f2f2;
-    --gray-20: #fafafa;
+    --gray-01: #999999;
+    --gray-02: #B1B1B1;
+    --gray-03: #CCCCCC;
+    --gray-04: #f2f2f2;
+}
+
+.container {
+    padding: 0 4.26667vw;
+}
+
+
+button {
+    cursor: pointer;
 }
