@@ -8,7 +8,7 @@ function ProductTapMenu() {
     const [activeTab, setActiveTab] = useState('detail');
 
     return(
-            <section className="prd-detail-info">
+            <div className="prd-detail-info">
                 <div className="tap-menu">
                     {/* 스크롤하면 position: fixed로 */}
                     <ul className="tap">
@@ -29,7 +29,7 @@ function ProductTapMenu() {
                     {activeTab === 'review' && <ProductReview/>}
                     {activeTab === 'inquiry' && <ProductInquiry/>}
                 </div>
-            </section>
+            </div>
     )
 }
 

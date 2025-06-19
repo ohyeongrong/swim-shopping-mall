@@ -1,6 +1,4 @@
 import useStore from "../../store/useStore";
-import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function LikeBtn({prd, dcPrice}) {
 

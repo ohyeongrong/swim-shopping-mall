@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import useStore from "../store/useStore";
+import LikeBtn from "./common/LikeBtn";
 
 function ProductSwiper({products}) {
 
@@ -9,7 +10,7 @@ function ProductSwiper({products}) {
 
     return (
 
-        <div className="product-carousel">
+        <div className="product-swiper">
             {
                 products.map((prd) => {
                     const isLiked = likeList.some(i => i.id === prd.id);
@@ -38,26 +39,7 @@ function ProductSwiper({products}) {
                                     </div>
                                 </Link>
                                 
-                                <button
-                                    type="button" 
-                                    className="like-button" 
-                                    aria-label="좋아요"
-                                    onClick={() => { 
-                                        addLikeList({
-                                            ...prd,
-                                            likedAt: new Date().toISOString(),
-                                            dcPrice: dcPrice
-                                        });
-                                    }}>
-
-                                    {/* 좋아요 버튼 컬러 */}
-                                    {
-                                        isLiked
-                                        ? <FavoriteIcon style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', color: 'var(--main-color)' }}/>
-                                        : <FavoriteBorderRoundedIcon style={{ fontSize: 'clamp(16px, 2.5vw, 20px)', color: 'var(--gray-500)' }}/> 
-                                    } 
-
-                                </button>
+                                <LikeBtn dcPrice={dcPrice} prd={prd}/>
                         </div>
                         )
                 })
