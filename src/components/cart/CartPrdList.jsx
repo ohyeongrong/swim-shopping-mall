@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom"
 import useStore from "@/store/useStore"
+import Modal from "@/components/common/Modal";
+import OptionEditModal from "@/components/cart/OptionEditModal";
+import { useState } from "react";
 
 function CartPrdList() {
+    
 
     const { 
         cartList, removeCartList, toggleAllChecked, 
         toggleItemChecked, removeChecked, dcPrice, 
-        getTotalProductPrice, getTotalDiscount 
+        getTotalProductPrice, getTotalDiscount, show, isVisible
     } = useStore();
+
+    const [selectedPrd, setSelectedPrd] = useState(null);
 
     return (
         <>
@@ -62,7 +68,7 @@ function CartPrdList() {
                                                 </div>
                                                 <div className="prd-info">
                                                     <p>{ prd.name }</p>
-                                                    <p>{ prd.quantity }</p>
+                                                    <p>사이즈 { prd.selectedOption } / 수량 { prd.quantity }</p>
                                                     
                                                     {
                                                         prd.saleRate > 0
@@ -82,13 +88,25 @@ function CartPrdList() {
                                         </Link>
 
                                         <div className="buy-btn">
-                                            <button type="button">옵션 변경</button>
+                                            <button 
+                                                type="button"
+                                                onClick={()=>{
+                                                    setSelectedPrd(prd)
+                                                    show()
+                                                }}
+                                            >
+                                                옵션 변경</button>
                                             <button type="button">바로 구매</button>
                                         </div>
 
                                         <div className="calculate-item">
                                             <p>{(dcPrice(prd) * prd.quantity).toLocaleString()} 원 + 배송비 0 원 = {(dcPrice(prd) * prd.quantity).toLocaleString()}원 </p>
                                         </div>
+
+                                        {
+                                            isVisible
+                                            && <Modal modalContent={<OptionEditModal selectedPrd={selectedPrd}/> } />
+                                        }
 
                                     </div>
                             )
@@ -108,7 +126,12 @@ function CartPrdList() {
                     <dt>총 배송비</dt>
                     <dd>0원</dd>
                     <dt>총 할인 금액</dt>
-                    <dd>-{ (getTotalDiscount()).toLocaleString() }원</dd>
+                    <dd>
+                        {
+                            getTotalDiscount() > 0
+                            && '-'
+                        }
+                        { (getTotalDiscount()).toLocaleString() }원</dd>
                 </dl>
             </div>
 

@@ -5,15 +5,20 @@ import useStore from "../store/useStore";
 import LikeBtn from "../components/common/LikeBtn";
 import ProductTapMenu from "../components/product/ProductTapMenu";
 import Modal from "@/components/common/modal"
+import OptionSelectModal from "@/components/product/OptionSelectModal";
 
 function Product() {
 
     const { prdId } = useParams();
-    const { foundPrd, selectedPrd, productsList, isVisible, show, dcPrice } = useStore();
+    const { foundPrd, selectedPrd, productsList, isVisible, show, dcPrice, hide } = useStore();
 
     useEffect(()=>{
         foundPrd(prdId);
     },[prdId, productsList, foundPrd, selectedPrd]);
+
+    useEffect(()=>{
+        hide()
+    },[]);
 
     return (
         <>
@@ -80,7 +85,7 @@ function Product() {
                 </div>
             </section>
 
-            { isVisible && <Modal /> }
+            { isVisible && <Modal modalContent={ <OptionSelectModal/> }/> }
         </>
     )
 }

@@ -79,9 +79,9 @@ const useStore = create((set, get) => ({
                 quantity: item.quantity + list.quantity
               };
             }
-  return item; // 조건 안 맞으면 원래 항목 그대로 반환
-})
-          }
+            return item; // 조건 안 맞으면 원래 항목 그대로 반환
+          })
+        }
     } else {
       // 2-2. 다르면 → 새 항목으로 추가
        // 3. 없다면 → 새로 추가 
@@ -100,6 +100,61 @@ const useStore = create((set, get) => ({
   }
 
   }),
+
+  editOptQty : (selOpt, qty, selPrd) => set((state) => {
+
+    // 2. 받아온 seletprd를 cartlist에서 찾아 찾을땐 id와 옵션 비교
+    const targetPrd = state.cartList.find((list)=> 
+      list.id === selPrd.id 
+      && list.selectedOption === selPrd.selectedOption
+    );
+
+    const sameOpt = state.cartList.find((list) => 
+      list.id === selPrd.id
+      && list.selectedOption === selOpt
+    )
+    
+    
+    // 3. cartlist에서 찾은 자료를 받아온 변경된 옵션, 수량으로 변경해
+
+    if(targetPrd){
+
+      if(sameOpt){
+        return {
+          cartList : state.cartList
+            .filter((list)=> !(list.id && selPrd.id && list.selectedOption === selPrd.selectedOption))
+            .map((item)=> {
+              if(item.id === selPrd.id && item.selectedOption === selOpt){
+                return {
+                  ...item,
+                  quantity: item.quantity + qty
+                }
+              }
+              return item
+            })
+        }
+      }
+
+      return {
+        cartList : state.cartList.map((item)=>{
+          if(item.id === selPrd.id && item.selectedOption === selPrd.selectedOption){
+            return {
+              ...item,
+              selectedOption: selOpt,
+              quantity: qty
+            }
+          }
+          return item
+        })
+      }
+
+    }
+
+    
+    // 4. 근데? 변경하는 제품과 동일한 옵션이 있으면?? 그럼 그럼 수량만 변경해 그리고 동일 selsetprd는 지워
+
+  }),
+
 
   //카트 페이지 - 선택 제품
 
