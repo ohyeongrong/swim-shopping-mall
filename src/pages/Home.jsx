@@ -67,7 +67,6 @@ function Home() {
             <details>
                 <summary>
                     사업자 정보
-                    화살표아이콘
                 </summary>
                 <ul>
                     <li><span>대표</span>이름요</li>

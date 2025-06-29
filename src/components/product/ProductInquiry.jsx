@@ -1,37 +1,42 @@
-import { Link } from "react-router-dom"
+import InquiryWriteModal from "./InquiryWriteModal"
+import usePrdInquiryStore from "@/store/usePrdInquiryStore";
+import InquiryList from "@/components/product/InquiryList"
+import { getProductInquiries } from "@/utils/inquiryUtils";
+import { useParams } from "react-router-dom";
+import usePrdInquiry from "@/hooks/usePrdInquiry";
 
 function ProductInquiry() {
+
+    const { isVisible, show, inquiryList }  = usePrdInquiryStore();
+    const { filterPrdInquiryList } = usePrdInquiry();
+    
     return(
-        <div className="prd-inquiry-wrap">
-            <div className="inquiry-title">
-                <h3>상품문의 [0]</h3>
+        <>
+            <div className="prd-inquiry-wrap">
+                <div className="prd-inquiry-title">
+                    <h3>상품문의 [{ filterPrdInquiryList.length }]</h3>
+                </div>
+
+                {
+                    filterPrdInquiryList.length > 0
+                    ? /* 글 있을때 */
+                        <InquiryList />
+                    : /* 글 없을 때 */
+                        <div>
+                            <svg width="135" height="80" viewBox="0 0 135 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M58.0879 10.1961L0.0486755 0V30.5882L58.0879 18.0392V10.1961Z" fill="url(#paint0_linear_233_20511)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M65.9318 0L51.0298 7.84314V10.1961H54.9514V18.0392H51.0298V20.3922H52.5985L47.8926 80H83.971L79.2651 20.3922H80.8338V18.0392H76.9122V10.1961H80.8338V7.84314L65.9318 0ZM58.0887 18.0392H73.7749V10.1961H58.0887V18.0392Z" fill="#CCCCCC"></path><path opacity="0.8" d="M62.0098 74.5099C62.0098 72.3441 63.7655 70.5884 65.9313 70.5884C68.0972 70.5884 69.8529 72.3441 69.8529 74.5099V76.8629H62.0098V74.5099Z" fill="white"></path><rect x="58.0879" y="10.1963" width="15.6863" height="7.84314" fill="#EEEEEE"></rect><defs><linearGradient id="paint0_linear_233_20511" x1="58.0879" y1="14.1176" x2="0.0486755" y2="14.1176" gradientUnits="userSpaceOnUse"><stop stop-color="#EEEEEE"></stop><stop offset="1" stop-color="#EEEEEE" stop-opacity="0"></stop></linearGradient></defs></svg>
+                            <p>문의글이 없습니다.</p>
+                        </div>
+                }
+
+                {/* productQna 컴포넌트로 이동 */}
+                <div>
+                    <button onClick={ show }>상품 문의하기</button>
+                </div>
             </div>
 
-            <ul className="inquiry-list">
-                {/* 글 있을때 반복문 */}
-                <li className="inquiry-item">
-                    <ul className="write-info">
-                        <li><span className="complete">답변완료</span></li>
-                        <li><span>날짜</span></li>
-                        <li><span>회원아이디</span></li>
-                    </ul>
-                    <div className="inquiry-txt">
-                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 11V6.5H12.5V13.5H4" stroke="#161616" stroke-width="1.5"></path><path d="M7 8.75V11.25" stroke="#161616" stroke-width="1.5"></path><path d="M10 6.5V4.5C10 2.84315 8.65685 1.5 7 1.5V1.5C5.34315 1.5 4 2.84315 4 4.5V6.5" stroke="#161616" stroke-width="1.5"></path></svg>
-                        <div>비밀글입니다.</div>
-                        {/* 글 내용 클릭하면 내용 나오는거임  */}
-                    </div>
-                </li>
+            { isVisible && <InquiryWriteModal/> }
             
-            </ul>
-
-            {/* 글 없을 때 */}
-            <div>
-                <span>상품 문의가 없습니다.</span>
-            </div>
-            
-            {/* productQna 컴포넌트로 이동 */}
-            <Link>상품 문의하기</Link>
-        </div>
+        </>
     )
 }
 

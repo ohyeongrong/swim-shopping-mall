@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
     /* 기본 컬러 */
     --main-color: #00cdf5;
@@ -13,6 +12,11 @@
     --gray-02: #B1B1B1;
     --gray-03: #CCCCCC;
     --gray-04: #f2f2f2;
+}
+
+body {
+    font-family: 'SUIT Variable', sans-serif;
+    letter-spacing: -0.02rem;
 }
 
 .container {
@@ -29,3 +33,9 @@ svg {
     stroke-width: 2;
     stroke-miterlimit: 10;
 }
+
+
+/* 홈 사업자 텍스트 토글*/
+/* summary {
+    list-style: none;
+} */

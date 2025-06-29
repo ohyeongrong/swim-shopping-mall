@@ -2,10 +2,16 @@ import { useState } from "react"
 import ProductDetail from "./ProductDetail"
 import ProductReview from "./ProductReview";
 import ProductInquiry from "./ProductInquiry"
+import usePrdInquiryStore from "@/store/usePrdInquiryStore"
+import usePrdInquiry from "@/hooks/usePrdInquiry";
+
 
 function ProductTapMenu() {
 
     const [activeTab, setActiveTab] = useState('detail');
+    const { inquiryList, hide } = usePrdInquiryStore();
+
+    const { filterPrdInquiryList } = usePrdInquiry();
 
     return(
             <div className="prd-detail-info">
@@ -16,10 +22,14 @@ function ProductTapMenu() {
                             <button type="button" onClick={()=>{setActiveTab('detail')}}>상세정보</button>
                         </li>
                         <li>
-                            <button type="button" onClick={()=>{setActiveTab('review')}} >리뷰 0</button>
+                            <button type="button" onClick={()=>{setActiveTab('review')}} >
+                                리뷰 [0]
+                            </button>
                         </li>
                         <li>
-                            <button type="button" onClick={()=>{setActiveTab('inquiry')}}>문의 0</button>
+                            <button type="button" onClick={()=>{ setActiveTab('inquiry'), hide() }}>
+                                문의 [{ filterPrdInquiryList.length > 0 ? filterPrdInquiryList.length : 0 }]
+                            </button>
                         </li>
                     </ul>
                 </div>

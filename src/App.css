@@ -249,13 +249,20 @@ progress::-webkit-progress-value {
     gap: 8px;
 }
 
-.write-info li .complete {
+.write-info li .answer {
     width: 43px;
     padding: 2px 4px;
-    background-color: var(--color-black);
-    color: var(--color-white);
     text-align: center;
     font-weight: 500;
+}
+
+.write-info li .complete {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.write-info li .wait {
+    background-color: var(--gray-04);
 }
 
 .write-info li {
@@ -277,7 +284,7 @@ progress::-webkit-progress-value {
     height: 50%;
 }
 
-.inquiry-txt {
+.inquiry-title {
     font-size: 14px;
     display: flex;
     gap: 4px;
@@ -416,4 +423,32 @@ progress::-webkit-progress-value {
 
 .total-area dt {
     width: calc(55%);
+}
+
+
+/* productInquiry - 문의글 쓰기 모달 */
+
+.qna-modal-wrap {
+    z-index: 2000;
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-white);
+    padding: 19px 16px 12px;
+}
+
+.qna-modal-wrap input[type="text"], textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--gray-03);
+    border-radius: 6px;
+}
+
+input[type="radio"] {
+    accent-color : var(--color-black);
+    width: 16px;
+}
+
+.qna-modal-wrap .error {
+    font-size: 0.8rem;
+    color: orangered;
 }
