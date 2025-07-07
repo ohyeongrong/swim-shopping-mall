@@ -4,7 +4,7 @@ import ThumSwiper from "../components/ThumSwiper";
 import useStore from "../store/useStore";
 import LikeBtn from "../components/common/LikeBtn";
 import ProductTapMenu from "../components/product/ProductTapMenu";
-import Modal from "@/components/common/modal"
+import BottomSheetModal from "@/components/common/BottomSheetModal"
 import OptionSelectModal from "@/components/product/OptionSelectModal";
 
 function Product() {
@@ -85,7 +85,7 @@ function Product() {
                 </div>
             </section>
 
-            { isVisible && <Modal modalContent={ <OptionSelectModal/> }/> }
+            { isVisible && <BottomSheetModal modalContent={ <OptionSelectModal/> }/> }
         </>
     )
 }

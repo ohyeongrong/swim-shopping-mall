@@ -327,6 +327,7 @@ progress::-webkit-progress-value {
     border-radius: 16px 16px 0 0;
     display: flex;
     flex-direction: column;
+
 }
 
 .modal-wrap .btn-close {
@@ -426,17 +427,20 @@ progress::-webkit-progress-value {
 }
 
 
-/* productInquiry - 문의글 쓰기 모달 */
+/* FullScreenModal - 풀스크린 모달 공통 */
 
-.qna-modal-wrap {
+.full-modal-wrap {
     z-index: 2000;
     position: fixed;
     inset: 0;
     background-color: var(--color-white);
     padding: 19px 16px 12px;
+    overflow-y: auto;
 }
 
-.qna-modal-wrap input[type="text"], textarea {
+/* inquiryWriteModal - 문의글 쓰기 모달 */
+
+.full-modal-wrap input[type="text"], textarea, input[type="number"]{
     width: 100%;
     padding: 8px 12px;
     border: 1px solid var(--gray-03);
@@ -448,7 +452,84 @@ input[type="radio"] {
     width: 16px;
 }
 
-.qna-modal-wrap .error {
+.qna-modal-content .error {
     font-size: 0.8rem;
     color: orangered;
+}
+
+
+/* ProductReview - 제품 리뷰 */
+
+.star-score svg {
+    width: 14px;
+    height: 14px;
+}
+
+.review-user-info {
+    font-size: 12px;
+}
+
+.review-user-info p {
+    color: var(--txt-muted-color);
+}
+
+.review-option {
+    border-radius: 0.4rem;
+    background-color: var(--gray-04);
+    color: var(--txt-muted-color);
+}
+
+/* ReviewWriteModal - 리뷰 글쓰기 모달 */
+
+.review-write-modal input[type="radio"] {
+    display: none;
+}
+
+.review-write-modal input[type="radio"]:checked + .radio-button {
+    background-color: var(--gray-03);
+}
+
+.review-write-modal .radio-button {
+    display: inline-block;
+    padding: 4px 16px;
+    border: 1px solid var(--gray-02);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.review-write-modal .radio-button:hover {
+    background-color: var(--gray-03);
+}
+
+.review-write-modal .photo input[type="file"] {
+    cursor: pointer;
+}
+
+.review-write-modal .rationg-area .star svg path:hover{
+    fill: var(--main-color);
+}
+
+/* ReviewList - 리뷰 리스트 */
+
+.prd-review-list {
+    border-bottom: 1px solid var(--gray-02);
+}
+
+.star-fill {
+    color : var(--color-black);
+}
+
+.star-empty {
+    color : var(--gray-03);
+}
+
+.review-content p {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: initial;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }

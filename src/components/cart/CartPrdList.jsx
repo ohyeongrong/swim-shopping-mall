@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import useStore from "@/store/useStore"
-import Modal from "@/components/common/Modal";
+import BottomSheetModal from "@/components/common/BottomSheetModal";
 import OptionEditModal from "@/components/cart/OptionEditModal";
 import { useState } from "react";
 
@@ -105,7 +105,7 @@ function CartPrdList() {
 
                                         {
                                             isVisible
-                                            && <Modal modalContent={<OptionEditModal selectedPrd={selectedPrd}/> } />
+                                            && <BottomSheetModal modalContent={<OptionEditModal selectedPrd={selectedPrd}/> } />
                                         }
 
                                     </div>

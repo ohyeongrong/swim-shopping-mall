@@ -1,8 +1,8 @@
 import usePrdInquiryStore from "@/store/usePrdInquiryStore";
-import { useEffect, useState } from "react";
+import { useState, forwardRef, useImperativeHandle } from "react";
 import { useParams } from "react-router-dom";
 
-function InquiryWriteModal() {
+const InquiryWriteModal = forwardRef((props, ref) => {
 
     const { hide, addInquiryList, inquiryList }  = usePrdInquiryStore();
 
@@ -14,12 +14,40 @@ function InquiryWriteModal() {
 
     const { prdId } = useParams();
 
-    const handleAddInquiryList = () => {
+    // const handleAddInquiryList = () => {
 
-        const write = {
+    //     const write = {
+    //         id: inquiryList.length + 1, //나중에 변경 해야함
+    //         productId: prdId,
+    //         writer: 'abcdefg', //로그인 구현하면 나중에 넣기
+    //         title: title,
+    //         content: content,
+    //         isSecret: radioChecked,
+    //         writeAt: new Date().toISOString(),
+    //         answered: false,
+    //         answerContent: '',
+    //         answeredAt: '날짜',
+    //     }
+
+    //     const isEmpty = (text) => text.trim() === "";
+
+    //     setTitleErr( isEmpty(title) ? "제목을 입력해 주세요." : "");
+    //     setContentErr( isEmpty(content) ? "내용을 입력해 주세요." : "");
+
+    //     if(!(isEmpty(title)) && !(isEmpty(content))){
+    //         addInquiryList(write);
+    //         setContet('');
+    //         setTitle('');
+    //         setRadioChecked('public');
+    //         hide()
+    //     }
+    // }
+
+        useImperativeHandle(ref, () => ({
+            getFormData: () => ({
             id: inquiryList.length + 1, //나중에 변경 해야함
             productId: prdId,
-            writer: 'abcdefg', //로그인 구현하면 나중에 넣기
+            writer: "abcdefg", //로그인 구현하면 나중에 넣기
             title: title,
             content: content,
             isSecret: radioChecked,
@@ -27,31 +55,12 @@ function InquiryWriteModal() {
             answered: false,
             answerContent: '',
             answeredAt: '날짜',
-        }
+            })
+        }));
 
-        const isEmpty = (text) => text.trim() === "";
-
-        setTitleErr( isEmpty(title) ? "제목을 입력해 주세요." : "");
-        setContentErr( isEmpty(content) ? "내용을 입력해 주세요." : "");
-
-        if(!(isEmpty(title)) && !(isEmpty(content))){
-            addInquiryList(write);
-            setContet('');
-            setTitle('');
-            setRadioChecked('public');
-            hide()
-        }
-    }
-
-    return(
-        <div className="qna-modal-wrap flex flex-col gap-2">
-            <div className="flex justify-between">
-                <h4>상품 문의하기</h4>
-                <button onClick={ hide }>닫기</button>
-            </div>
-
-            <form /*onSubmit=""*/ autoComplete="off" noValidate className="flex flex-col gap-4">
-                <div className="flex flex-col">
+    return (
+            <>
+                <div className="qna-modal-content flex flex-col">
                     <label>공개여부</label>
                     <div className="radio-group flex gap-3">
                         <div className="flex gap-1">
@@ -88,16 +97,8 @@ function InquiryWriteModal() {
                     {/* 에러 */}
                     { contentErr && <p className="error">{ contentErr }</p> }
                 </div>
-            </form>
-
-            <div className="btn-area">
-                <button type="button" onClick={ hide }>닫기</button>
-                <button type="submit"
-                    onClick={()=>{ handleAddInquiryList() }}
-                >등록하기</button>
-            </div>
-        </div>
+            </>
     )
-}
+});
 
 export default InquiryWriteModal

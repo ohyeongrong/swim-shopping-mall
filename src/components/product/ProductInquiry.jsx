@@ -1,13 +1,15 @@
 import InquiryWriteModal from "./InquiryWriteModal"
 import usePrdInquiryStore from "@/store/usePrdInquiryStore";
 import InquiryList from "@/components/product/InquiryList"
-import { getProductInquiries } from "@/utils/inquiryUtils";
-import { useParams } from "react-router-dom";
 import usePrdInquiry from "@/hooks/usePrdInquiry";
+import FullScreenModal from "../common/FullScreenModal";
+import { useRef } from "react";
 
 function ProductInquiry() {
 
-    const { isVisible, show, inquiryList }  = usePrdInquiryStore();
+    const formRef = useRef();
+
+    const { addInquiryList, inquiryList, isVisible, show, hide }  = usePrdInquiryStore();
     const { filterPrdInquiryList } = usePrdInquiry();
     
     return(
@@ -34,7 +36,23 @@ function ProductInquiry() {
                 </div>
             </div>
 
-            { isVisible && <InquiryWriteModal/> }
+            
+
+            { 
+                isVisible 
+                &&  <FullScreenModal 
+                        modalContent={ <InquiryWriteModal ref={ formRef } /> } 
+                        title="상품 문의하기"
+                        onClose={ hide }
+                        submitLabel="등록하기"
+                        onSubmit={() => {
+                        const data = formRef.current?.getFormData?.();
+                        addInquiryList(data)
+                        console.log(inquiryList);
+                        hide();
+                        }}
+                        />
+            }
             
         </>
     )

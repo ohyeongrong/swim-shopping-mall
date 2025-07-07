@@ -1,7 +1,7 @@
 import useStore from "@/store/useStore"
 import { useState } from "react";
 
-function Modal({modalContent}) {
+function BottomSheetModal({modalContent}) {
 
     const { hide, setQuantity } = useStore();
     const [selectedOption, setSelectedOption] = useState("");
@@ -31,4 +31,4 @@ function Modal({modalContent}) {
     )
 }
 
-export default Modal
+export default BottomSheetModal
