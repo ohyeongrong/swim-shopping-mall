@@ -1,7 +1,7 @@
 import InquiryWriteModal from "./InquiryWriteModal"
 import usePrdInquiryStore from "@/store/usePrdInquiryStore";
 import InquiryList from "@/components/product/InquiryList"
-import usePrdInquiry from "@/hooks/usePrdInquiry";
+import usePrdInquiry from "@/hooks/useFilterPrdPost";
 import FullScreenModal from "../common/FullScreenModal";
 import { useRef } from "react";
 

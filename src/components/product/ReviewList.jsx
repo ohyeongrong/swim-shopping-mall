@@ -1,9 +1,12 @@
 import usePrdReviewStore from "@/store/usePrdReviewStore"
 import { Link } from "react-router-dom"
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
 
 function ReviewList() {
 
-    const { reviewList } = usePrdReviewStore();
+    const { reviewList, toggleReview, isExpanded } = usePrdReviewStore();
+
+    const { filterPrdReviewList } = useFilterPrdPost();
 
     const maskUserId = (id) => {
         const idBackSlice = id.slice(0, -3);
@@ -11,7 +14,7 @@ function ReviewList() {
     };
 
     return (
-        <>
+        <div className="review-list">
             <div className="media-review-summary">
                 <ul>
                     {/* 이미지 반복 마지막 이미지에는 위에 더보기 넣기 */}
@@ -37,7 +40,7 @@ function ReviewList() {
                 <ul>
                     {/* 리뷰 리스트 반복 */}
                     {
-                        reviewList.map((list, i) =>
+                        filterPrdReviewList.map((list, i) =>
                             <li className="prd-review-list" key={ list.id + i }>
                                 <div className="review-user-info flex justify-between ">
                                     <div className="flex items-center">
@@ -70,9 +73,16 @@ function ReviewList() {
                                 </div>
 
                                 <div className="review-content">
-                                    <p>{ list.review }</p>
-                                    {/* 글이 너무 길면 클릭해서 더보기 */}
-                                    <button>더보기</button>
+                                    <p className={ !isExpanded && "expand" }>{ list.review }</p>
+                                    
+                                    {
+                                        list.review.length > 25 && (
+                                            <button onClick={() => { toggleReview(list.id)}}> 
+                                                { !isExpanded ? "더보기" : "접기" }
+                                            </button>
+                                        )
+                                    }
+                                    
                                     {
                                         reviewList.map((list, i) => {
                                             if(list.images.length > 0) {
@@ -105,7 +115,8 @@ function ReviewList() {
                 {/* 여기도 반복문 해야할듯 */}
                 <Link>1</Link>
             </div>
-        </>
+
+        </div>
     )
 }
 

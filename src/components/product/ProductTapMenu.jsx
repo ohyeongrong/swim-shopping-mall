@@ -3,15 +3,15 @@ import ProductDetail from "./ProductDetail"
 import ProductReview from "./ProductReview";
 import ProductInquiry from "./ProductInquiry"
 import usePrdInquiryStore from "@/store/usePrdInquiryStore"
-import usePrdInquiry from "@/hooks/usePrdInquiry";
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
 
 
 function ProductTapMenu() {
 
     const [activeTab, setActiveTab] = useState('detail');
-    const { inquiryList, hide } = usePrdInquiryStore();
 
-    const { filterPrdInquiryList } = usePrdInquiry();
+    const { hide } = usePrdInquiryStore();
+    const { filterPrdInquiryList, filterPrdReviewList } = useFilterPrdPost();
 
     return(
             <div className="prd-detail-info">
@@ -23,7 +23,7 @@ function ProductTapMenu() {
                         </li>
                         <li>
                             <button type="button" onClick={()=>{setActiveTab('review')}} >
-                                리뷰 [0]
+                                리뷰 [{ filterPrdReviewList.length > 0 ? filterPrdReviewList.length : 0 }]
                             </button>
                         </li>
                         <li>

@@ -15,8 +15,22 @@ const usePrdReviewStore = create((set, get) => ({
     isVisible: false,
     show : () => set({ isVisible: true }),
     hide : () => set({ isVisible : false}),
-    toggle : () => set((state)=>({ isVisible: !state.isVisible })),
 
+    //ReviewWriteModal - 리뷰 글쓰기 사진 파일 첨부
+    imageList: [],
+    addImageList : (list) => set((state) => {
+        return { imageList: [...state.imageList, list] }
+    }),
+
+    //ReviewList - 리뷰 리스트 글 더보기/접기
+    isExpanded: false,
+    expandedReviewId: null,
+    toggleReview: (id) => set((state) => {
+        return { 
+            expandedReviewId : state.expandedReviewId === id ? null : id,
+            isExpanded: state.expandedReviewId === id ? true : false
+        }
+    }),
 
 }))
 

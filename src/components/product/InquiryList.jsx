@@ -1,12 +1,12 @@
 import usePrdInquiryStore from "@/store/usePrdInquiryStore";
 import { useParams } from "react-router-dom";
-import usePrdInquiry from "@/hooks/usePrdInquiry";
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
 
 function InquiryList() {
 
     const { inquiryList, toggleInquiry, openedInquiryId } = usePrdInquiryStore();
 
-    const { filterPrdInquiryList } = usePrdInquiry();
+    const { filterPrdInquiryList } = useFilterPrdPost();
 
     
     const maskUserId = (id) => {

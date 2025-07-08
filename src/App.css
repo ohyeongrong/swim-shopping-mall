@@ -509,6 +509,47 @@ input[type="radio"] {
     fill: var(--main-color);
 }
 
+.file-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--gray-02);
+    width: 60px;
+    height: 60px;
+}
+
+.file-area input[type="file"] {
+    display: none;
+}
+
+.file-btn svg {
+    stroke: var(--gray-02);
+    transform: rotate(-45deg);
+}
+
+.thumb-box {
+    position: relative;
+}
+
+.thumb-box button {
+    position: absolute;
+    z-index: 10000;
+    top: 4px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.thumb-box button svg {
+    width: 14px;
+    height: 14px;
+}
+
 /* ReviewList - 리뷰 리스트 */
 
 .prd-review-list {
@@ -523,7 +564,7 @@ input[type="radio"] {
     color : var(--gray-03);
 }
 
-.review-content p {
+.review-content .expand {
     display: -webkit-box;
     text-overflow: ellipsis;
     overflow: hidden;

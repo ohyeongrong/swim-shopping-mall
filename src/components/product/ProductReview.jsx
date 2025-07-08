@@ -3,6 +3,7 @@ import ReviewWriteModal from "./ReviewWriteModal"
 import usePrdReviewStore from "@/store/usePrdReviewStore"
 import FullScreenModal from "../common/FullScreenModal";
 import { useRef } from "react";
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
 
 
 function ProductReview() {
@@ -11,19 +12,13 @@ function ProductReview() {
 
     const { isVisible, show, hide, reviewList, addReviewList } = usePrdReviewStore();
 
+    const { filterPrdReviewList } = useFilterPrdPost();
+
     return (
 
         <section className="prd-review-warp">
             <div className="review-title flex items-center">
-                <h3>리뷰 [{ reviewList.length }]</h3>
-                {/* 리스트 평균 별점 구하기 */}
-                <div className="star-score flex">
-                    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" role="img"><path fill="currentColor" fill-rule="evenodd" d="M8.91 8.584 2 9.639l5 5.125L5.82 22 12 18.583 18.18 22 17 14.764l5-5.125-6.91-1.055L12 2z" clip-rule="evenodd"></path></svg>
-                    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" role="img"><path fill="currentColor" fill-rule="evenodd" d="M8.91 8.584 2 9.639l5 5.125L5.82 22 12 18.583 18.18 22 17 14.764l5-5.125-6.91-1.055L12 2z" clip-rule="evenodd"></path></svg>
-                    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" role="img"><path fill="currentColor" fill-rule="evenodd" d="M8.91 8.584 2 9.639l5 5.125L5.82 22 12 18.583 18.18 22 17 14.764l5-5.125-6.91-1.055L12 2z" clip-rule="evenodd"></path></svg>
-                    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" role="img"><path fill="currentColor" fill-rule="evenodd" d="M8.91 8.584 2 9.639l5 5.125L5.82 22 12 18.583 18.18 22 17 14.764l5-5.125-6.91-1.055L12 2z" clip-rule="evenodd"></path></svg>
-                    <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" role="img"><path fill="currentColor" fill-rule="evenodd" d="M8.91 8.584 2 9.639l5 5.125L5.82 22 12 18.583 18.18 22 17 14.764l5-5.125-6.91-1.055L12 2z" clip-rule="evenodd"></path></svg>
-                </div>
+                <h3>리뷰 [{ filterPrdReviewList.length }]</h3>
             </div>
 
             { 

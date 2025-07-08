@@ -1,8 +1,9 @@
 import feedbackOptions from "@/data/feedbackOptions"
-import { useState, forwardRef, useImperativeHandle } from "react";
+import { useState, forwardRef, useImperativeHandle, useEffect } from "react";
 import useStore from "@/store/useStore";
 import usePrdReviewStore from "@/store/usePrdReviewStore";
 import { useParams } from "react-router-dom";
+import { Duo } from "@mui/icons-material";
 
 
 const ReviewWriteModal = forwardRef((props, ref) => {
@@ -26,7 +27,14 @@ const ReviewWriteModal = forwardRef((props, ref) => {
         const [sizeFeedback, setSizeFeedback] = useState("");
         const [colorFeedback, setColorFeedback] = useState("");
         const [review, setReview] = useState("");
+
         const [images, setImages] = useState([]);
+
+        useEffect(() => {
+            return () => {
+                images.forEach(image => URL.revokeObjectURL(image));
+            };
+        }, [images]);
 
         const [height, setHeight] = useState("");
         const [weight, setWeight] = useState("");
@@ -59,7 +67,7 @@ const ReviewWriteModal = forwardRef((props, ref) => {
             height,
             weight,
             usualSize: selUsualSize,
-            images: Array.from(images),
+            images,
             writeAt: new Date().toISOString(),
             })
         }));
@@ -127,13 +135,52 @@ const ReviewWriteModal = forwardRef((props, ref) => {
 
             <div className="review-area">
                 <h4>후기 작성</h4>
-                <input 
-                    type="file" 
-                    id="review-write"
-                    accept=".png, .jpg" 
-                    multiple
-                    onChange={(e)=>{ setImages(e.target.files) }}
-                />
+                <div className="flex">
+                    <div className="file-area">
+                        <label htmlFor="review-photo">
+                            <div className="file-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9961 4.99609L11.9961 11.9961L4.99609 18.9961"></path><path d="M19.0039 18.9961L14.0039 13.9961"></path><path d="M5.00391 4.99609L10.0039 9.99609"></path></svg>
+                            </div>
+                            <span>{ images.length }/5</span>
+                            <input 
+                                type="file" 
+                                id="review-photo"
+                                accept=".png, .jpg" 
+                                multiple
+                                onChange={(e)=>{ 
+                                    const newFile = Array.from(e.target.files);
+                                    if(images.length + newFile.length > 5){
+                                        alert("이미지는 최대 5개까지 첨부할 수 있어요.");
+                                        return
+                                    }
+                                    setImages(prev => [...prev, ...newFile]) 
+                                }}
+                            />
+                        </label>
+                    </div>
+                    <div className="file-thum flex">
+                        {/* 첨부파일 썸네일, 첨부파일 삭제 */}
+                        { 
+                            images.length > 0 
+                            && images.map((image, i) => (
+                                <div className="thumb-box">
+                                    <button type="button" onClick={() => {
+                                        setImages(prev => prev.filter((_, index) => index !== i));
+                                    }}>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.9961 4.99609L11.9961 11.9961L4.99609 18.9961" stroke="white"></path><path d="M19.0039 18.9961L14.0039 13.9961" stroke="white"></path><path d="M5.00391 4.99609L10.0039 9.99609" stroke="white"></path></svg>
+                                    </button>
+                                    <img 
+                                    key={i}
+                                    src={URL.createObjectURL(image)} 
+                                    alt={`preview-${i}`}
+                                    style={{ width: "60px", height: "60px", objectFit: "cover" }}
+                                    />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+
                 <textarea 
                     id="review-write" 
                     placeholder="구매하신 아이템의 후기를 20자이상 넘겨주세요."
