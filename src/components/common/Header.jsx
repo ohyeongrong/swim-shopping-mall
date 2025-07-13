@@ -1,11 +1,12 @@
-import { Link, useNavigate, useLocation } from "react-router-dom"
+import { Link, useNavigate, useLocation, useParams } from "react-router-dom"
 import { BackArrowIcon, SearchIcon, CartIcon, Logo, HomeIcon } from "@/components/common/Icon"
 import iconLinkItems from "@/data/iconLinkItems";
-import useStore from "@/store/useStore"
+import useCartStore from "@/store/useCartStore"
+import "@/components/common/Header.css"
 
 function Header() {
 
-    const { cartList } = useStore();
+    const { cartList } = useCartStore();
 
     const location = useLocation();
     const path = location.pathname;
@@ -13,9 +14,9 @@ function Header() {
     const homePath = path === "/"
     const cartPath = path === "/cart"
     const mylikePath = path === "/mylike"
-    const productPath = path === "/product"
+    const productPath = path.startsWith("/product")
 
-    const labelfind = iconLinkItems.find(item => item.url === path);
+    const labelFind = iconLinkItems.find(item => item.url === path);
 
     const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ function Header() {
                                 { 
                                     homePath || productPath
                                     ? <Link to={"/"}>{ homePath ? <Logo/> : <HomeIcon /> }</Link>
-                                    : labelfind.label
+                                    : labelFind?.label
                                 }
                             </h1>
                         </div>
@@ -55,7 +56,6 @@ function Header() {
                                                             <span aria-label={`${ cartList.length }개의 상품이 담겨 있습니다.`}>{ cartList.length }</span>
                                                         </div>
                                                     }
-
                                                 </Link>
                                             </div>
                                         </li>

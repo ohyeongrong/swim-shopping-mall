@@ -6,6 +6,7 @@ import LikeBtn from "../components/common/LikeBtn";
 import ProductTapMenu from "../components/product/ProductTapMenu";
 import BottomSheetModal from "@/components/common/BottomSheetModal"
 import OptionSelectModal from "@/components/product/OptionSelectModal";
+import Header from "@/components/common/Header";
 
 function Product() {
 
@@ -22,7 +23,6 @@ function Product() {
 
     return (
         <>
-        {/* 공용헤더 */}
             <section>
                 <div className="prd-content-wrap">
                     {/* 상품 섬네일 영역 */}

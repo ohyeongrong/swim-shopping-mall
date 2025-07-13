@@ -61,7 +61,7 @@ progress::-webkit-progress-value {
 
 .order-btn-warp {
     position: fixed;
-    z-index: 98;
+    z-index: 100;
     right: 0;
     left: 0;
     bottom: 0;

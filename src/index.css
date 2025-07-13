@@ -64,26 +64,3 @@ summary {
     font-weight: 500;
 }
 
-/* header 컴포넌트 장바구니 카운트 */
-
-.count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -7px;
-    right: -7px;
-    border-radius: 100%;
-    /* 컬러변경 */
-    background-color: #FF4500;
-    width: 20px;
-    height: 20px;
-    font-size: 0.625rem;
-    color: white;
-    font-weight: 500;
-}
-
-.header-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-}

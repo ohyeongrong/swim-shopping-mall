@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import useStore from "@/store/useStore"
+import useCartStore from "@/store/useCartStore"
 import BottomSheetModal from "@/components/common/BottomSheetModal";
 import OptionEditModal from "@/components/cart/OptionEditModal";
 import { useState } from "react";
@@ -11,7 +11,7 @@ function CartPrdList() {
         cartList, removeCartList, toggleAllChecked, 
         toggleItemChecked, removeChecked, dcPrice, 
         getTotalProductPrice, getTotalDiscount, show, isVisible
-    } = useStore();
+    } = useCartStore();
 
     const [selectedPrd, setSelectedPrd] = useState(null);
 
@@ -135,9 +135,14 @@ function CartPrdList() {
                 </dl>
             </div>
 
+            {/* 임시 공간 나중에 삭제 */}
+            <div className="test"></div>
+
             {/* 하단에 접착해야함 */}
-            <div className="btn-area">
-                <button type="button">{(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 ({cartList.length}개)</button>
+            <div className="order-btn-warp">
+                <div className="btn-area">
+                    <button type="button">{(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 ({cartList.length}개)</button>
+                </div>
             </div>
         </>
     )

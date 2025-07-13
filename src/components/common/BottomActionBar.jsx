@@ -1,3 +1,4 @@
+import "@/components/common/BottomActionBar.css"
 import { Link } from "react-router-dom"
 import { CategoryIcon, SearchIcon, HomeIcon, MyLikeIcon, MyPageIcon } from '@/components/common/Icon';
 

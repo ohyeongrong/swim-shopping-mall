@@ -1,10 +1,11 @@
 import useStore from "@/store/useStore"
 import { useState } from "react";
+import useCartStore from "@/store/useCartStore";
 
 function OptionSelectModal() {
     
-    const { selectedPrd, hide, quantity, increase, decrease, setQuantity, addCartList, cartList, dcPrice } = useStore();
-
+    const { selectedPrd, hide, quantity, increase, decrease, setQuantity, dcPrice } = useStore();
+    const { addCartList } = useCartStore();
     const [selectedOption, setSelectedOption] = useState("");
 
     const handleAddCartList = () => {

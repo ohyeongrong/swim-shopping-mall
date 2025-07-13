@@ -1,10 +1,10 @@
 
 import { useState } from "react";
-import useStore from "@/store/useStore";
+import useCartStore from "@/store/useCartStore";
 
 function OptionEditModal ({selectedPrd}) {
 
-    const { editOptQty, cartList, hide } = useStore();
+    const { editOptQty, cartList, hide } = useCartStore();
 
     const [editSelOpt, setEditSelOpt] = useState( selectedPrd.selectedOption || "");
     const [editQty, setEditQty] = useState( selectedPrd.quantity || 1);

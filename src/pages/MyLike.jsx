@@ -3,8 +3,6 @@ import LikeSort from "../components/LikeSort"
 import BottomActionBar from "@/components/common/BottomActionBar";
 import ProductCard from '@/components/common/ProductCard'
 import Header from '@/components/common/Header';
-import PageHeaderContent from "@/components/common/PageHeaderContent";
-
 
 function MyLike() {
 
@@ -12,7 +10,6 @@ function MyLike() {
     
     return (
         <>
-            <Header/>
             <section>
                 <LikeSort />
                 <div className="grid grid-cols-2 gap-1.5">
@@ -21,7 +18,6 @@ function MyLike() {
                     }
                 </div>
             </section>
-            <BottomActionBar/>
         </>
     )
 }

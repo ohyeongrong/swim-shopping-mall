@@ -51,48 +51,47 @@ const useCartStore = create((set, get) => ({
 
         // 2. 받아온 seletprd를 cartlist에서 찾아 찾을땐 id와 옵션 비교
         const targetPrd = state.cartList.find((list)=> 
-        list.id === selPrd.id 
-        && list.selectedOption === selPrd.selectedOption
+            list.id === selPrd.id 
+            && list.selectedOption === selPrd.selectedOption
         );
 
         const sameOpt = state.cartList.find((list) => 
-        list.id === selPrd.id
-        && list.selectedOption === selOpt
+            list.id === selPrd.id
+            && list.selectedOption === selOpt
         )
         
-        
-        // 3. cartlist에서 찾은 자료를 받아온 변경된 옵션, 수량으로 변경해
-
         if(targetPrd){
+            const isOptionChanged = selOpt !== selPrd.selectedOption;
+            // 옵션을 바꿨는데 같은 옵션이 이미 존재 → 기존 삭제 + 수량 병합
+            if(isOptionChanged && sameOpt){
+                return {
+                    cartList : state.cartList
+                        .filter((list)=> !(list.id === selPrd.id && list.selectedOption === selPrd.selectedOption))
+                        .map((item)=> {
+                            if(item.id === selPrd.id && item.selectedOption === selOpt){
+                                return {
+                                ...item,
+                                quantity: item.quantity + qty
+                                }
+                            }
+                            return item
+                        })
+                }
+            }
 
-        if(sameOpt){
+            // 옵션은 그대로고 수량만 변경하는 경우 or 옵션을 다른 걸로 변경
             return {
-            cartList : state.cartList
-                .filter((list)=> !(list.id === selPrd.id && list.selectedOption === selPrd.selectedOption))
-                .map((item)=> {
-                if(item.id === selPrd.id && item.selectedOption === selOpt){
+                cartList : state.cartList.map((item)=>{
+                if(item.id === selPrd.id && item.selectedOption === selPrd.selectedOption){
                     return {
                     ...item,
-                    quantity: item.quantity + qty
+                    selectedOption: selOpt,
+                    quantity: qty
                     }
                 }
                 return item
                 })
             }
-        }
-
-        return {
-            cartList : state.cartList.map((item)=>{
-            if(item.id === selPrd.id && item.selectedOption === selPrd.selectedOption){
-                return {
-                ...item,
-                selectedOption: selOpt,
-                quantity: qty
-                }
-            }
-            return item
-            })
-        }
 
         }
 
