@@ -37,21 +37,6 @@ progress::-webkit-progress-value {
     background-color: var(--main-color);
 }
 
-/* 제품페이지 - 탭메뉴 */
-
-.tap {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-}
-
-.tap li {
-    /* 사이즈 수정 해야함 */
-    width: 100%;
-    padding: 1rem 0;
-    border-bottom: 2px solid var(--color-black);
-}
 
 /* 제품페이지 - 구매 버튼 */
 
