@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+    --color-main: #1456fd;
+    --color-danger: #EC221F;
+
+    --color-black: #161616;
+    --color-white: #FFFFFF;
+    --color-red: #ff5757;
+
+    --color-gray-100: #F8F8F8;
+    --color-gray-200: #F4F4F4;
+    --color-gray-300: #EEEEEE;
+    --color-gray-400: #DDDDDD;
+    --color-gray-500: #AAAAAA;
+    --color-gray-600: #888888;
+    --color-gray-700: #666666;
+    --color-gray-800: #444444;
+
+    --spacing-16-32: clamp(16px, calc(11.429px + 1.429vw), 32px)
+}
+
+body {
+    font-family: 'SUIT Variable', sans-serif;
+    letter-spacing: -0.02rem;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    touch-action: manipulation;
+}
+
+.container {
+    padding: 0 4.26667vw;
+}
+
+
+button, details {
+    cursor: pointer;
+}
+
+
+svg {
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}

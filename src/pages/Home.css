@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+.gnb-bar {
+    padding: 0 0 0 clamp(16px, calc(11.429px + 1.429vw), 32px);
+}
