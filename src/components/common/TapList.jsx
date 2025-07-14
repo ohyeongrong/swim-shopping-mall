@@ -1,29 +1,28 @@
-import { useState } from "react"
-
-
-function TapList() {
+function TapList({ tabList, onTabClick, onTabChange, ListLength}) {
 
     return(
-            <div className="prd-detail-info">
-                <div className="tap-menu">
-                    {/* 스크롤하면 position: fixed로 */}
-                    <ul className="tap">
-                        <li>
-                            <button type="button">상품 0</button>
-                        </li>
-                        <li>
-                            <button type="button">브랜드</button>
-                        </li>
-                    </ul>
-                </div>
-                {/* 상세정보, 리뷰, 문의에 따라 변화 */}
-                <div className="tap-content">
-                    {/* {activeTab === 'detail' && <ProductDetail/>}
-                    {activeTab === 'review' && <ProductReview/>}
-                    {activeTab === 'inquiry' && <ProductInquiry/>} */}
-                </div>
+            <div className="text-sm font-bold">
+                <ul className="flex w-full justify-center items-center text-center">
+                    {
+                        tabList.map((tap, i)=>
+                            <li 
+                                key={i} 
+                                className= {`w-full py-3 border-b-2 ${ onTabClick === tap.type ? "border-[var(--color-black)] text-[var(--color-black)]" : "border-[var(--color-gray-300)]  text-[var(--color-gray-500)]" }`}>
+                                <button type="button" onClick={() => onTabChange(tap.type)}>
+                                    <div className="flex items-center gap-1">
+                                        {tap.label}
+                                        <span className="text-xs  text-[var(--color-gray-500)]">
+                                            {ListLength}
+                                        </span>
+                                    </div>
+                                </button>
+                            </li>
+                        )
+                    }
+
+                </ul>
             </div>
     )
 }
 
-export default ProductTapMenu
+export default TapList

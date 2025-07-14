@@ -1,5 +1,5 @@
 
-    export const Logo = ({ fill = "black" }) => (
+    export const Logo = ({ fill = "var(--color-black)" }) => (
         <svg width="110" height="20" viewBox="0 0 110 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_3203_116318)"><path d="M0 9.61773C0 5.28899 2.16268 2.55273 6.44757 2.55273C9.95645 2.55273 11.7885 4.25319 12.3216 7.27623L9.98006 7.76207C9.49422 5.75459 8.47867 4.73904 6.42732 4.73904C3.59998 4.73904 2.52032 6.61494 2.52032 9.61773C2.52032 12.4451 3.69107 14.186 6.51504 14.186C9.33902 14.186 10.1589 12.6846 10.1589 11.163H6.45094V9.10827H12.5206V16.0619H10.2027V13.103H9.98344C9.40987 14.8912 8.08392 16.2812 5.59059 16.2812C2.29764 16.2846 0 14.0544 0 9.61773Z" fill={ fill }></path>
             <path d="M21.3242 13.5894H21.0813C20.5516 15.2663 19.3606 16.2818 17.5252 16.2818C15.6898 16.2818 14.3672 15.3979 14.3672 13.3667C14.3672 11.5111 15.4941 10.1649 18.119 10.1649H21.2095V9.45975C21.2095 8.11355 20.6562 7.34092 19.202 7.34092C17.9874 7.34092 17.2823 7.95835 17.0157 9.17296L14.7653 8.6635C15.1634 6.69988 16.6412 5.44141 19.2897 5.44141C22.2925 5.44141 23.5712 6.85508 23.5712 9.43613V16.0591H21.3208V13.5861L21.3242 13.5894ZM21.2129 12.1555V11.7371H18.5205C17.3295 11.7371 16.6446 12.1791 16.6446 13.0395C16.6446 13.7885 17.1068 14.4295 18.4564 14.4295C20.113 14.4295 21.2163 13.4578 21.2163 12.1555H21.2129Z" fill={ fill }></path>
@@ -17,7 +17,7 @@
         </svg>
     )
     
-    export const CategoryIcon = ({ stroke = "black" }) => (
+    export const CategoryIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="4" y="4" width="6" height="6" stroke={ stroke } stroke-width="2"></rect>
             <rect x="4" y="14" width="6" height="6" stroke={ stroke } stroke-width="2"></rect>
@@ -26,34 +26,34 @@
         </svg>
     )
 
-    export const SearchIcon = ({ stroke = "black" }) => (
+    export const SearchIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10.625" cy="10.125" r="7.125" stroke={ stroke } stroke-width="2"></circle>
             <path d="M17 17.75L20.7822 21.5322" stroke={ stroke } stroke-width="2"></path>
         </svg>
     )
 
-    export const HomeIcon = ({ stroke = "black" }) => (
+    export const HomeIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 13V20.9998H19V13" stroke={ stroke } stroke-width="2"></path>
             <path d="M2 11L11.9992 3L22 11" stroke={ stroke } stroke-width="2"></path>
         </svg>
     )
 
-    export const MyLikeIcon = ({ stroke = "black" }) => (
+    export const MyLikeIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.5434 13.3279C19.5197 12.3336 22 9.81496 22 9.81496L16.2882 4L12 8.36122L7.7118 4L2 9.81496L12 20L15.5256 16.4372" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
         </svg>
     )
 
-    export const MyPageIcon = ({ stroke = "black" }) => (
+    export const MyPageIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke={ stroke } stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             <path d="M3 15H20V22" stroke={ stroke } stroke-width="2"></path>
         </svg>
     )
 
-    export const CartIcon = ({ stroke = "black", fill = "black" }) => (
+    export const CartIcon = ({ stroke = "var(--color-black)", fill = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.529 6.22667H22.1191L19.2205 14.9223H9.31774L5.22366 3.32812H0.53125" stroke={ stroke } stroke-width="1.93237"></path>
             <path d="M7.17969 20.2946C7.17969 19.174 8.0881 18.2656 9.20867 18.2656C10.3293 18.2656 11.2377 19.174 11.2377 20.2946C11.2377 21.4152 10.3293 22.3236 9.20867 22.3236C8.0881 22.3236 7.17969 21.4152 7.17969 20.2946Z" fill={ fill }></path>
@@ -61,20 +61,20 @@
         </svg>
     )
 
-    export const GoTopIcon = ({ stroke = "black" }) => (
+    export const GoTopIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 6.75L9 15.75" stroke={ stroke } stroke-width="2"></path>
             <path d="M3 8.625L9 2.625L15 8.625"stroke={ stroke } stroke-width="2"></path>
         </svg>
     )
 
-    export const MoreArrowIcon = ({ stroke = "black" }) => (
+    export const MoreArrowIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L5.05063 5L9 1" stroke={ stroke } stroke-width="2" stroke-miterlimit="10" transform="rotate(180 5 3.5)"></path>
         </svg>
     )
 
-    export const BackArrowIcon = ({ stroke = "black" }) => (
+    export const BackArrowIcon = ({ stroke = "var(--color-black)" }) => (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 12L21 12" stroke={ stroke } stroke-width="2"></path>
             <path d="M11.499 20.002L3.49902 12.002L11.499 4.00195" stroke={ stroke } stroke-width="2"></path>
@@ -83,4 +83,17 @@
 
     export const EmptyIcon = () => (
         <svg width="135" height="80" viewBox="0 0 135 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M58.0879 10.1961L0.0486755 0V30.5882L58.0879 18.0392V10.1961Z" fill="url(#paint0_linear_233_20511)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M65.9318 0L51.0298 7.84314V10.1961H54.9514V18.0392H51.0298V20.3922H52.5985L47.8926 80H83.971L79.2651 20.3922H80.8338V18.0392H76.9122V10.1961H80.8338V7.84314L65.9318 0ZM58.0887 18.0392H73.7749V10.1961H58.0887V18.0392Z" fill="#CCCCCC"></path><path opacity="0.8" d="M62.0098 74.5099C62.0098 72.3441 63.7655 70.5884 65.9313 70.5884C68.0972 70.5884 69.8529 72.3441 69.8529 74.5099V76.8629H62.0098V74.5099Z" fill="white"></path><rect x="58.0879" y="10.1963" width="15.6863" height="7.84314" fill="#EEEEEE"></rect><defs><linearGradient id="paint0_linear_233_20511" x1="58.0879" y1="14.1176" x2="0.0486755" y2="14.1176" gradientUnits="userSpaceOnUse"><stop stop-color="#EEEEEE"></stop><stop offset="1" stop-color="#EEEEEE" stop-opacity="0"></stop></linearGradient></defs></svg>
+    )
+
+    export const HeartFillIcon = ({ fill = "var(--color-red)" }) => (
+        <svg width="26" height="26" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.42969 14.5418L17.0011 26L28.5725 14.5418L21.9632 8L17.0011 12.9064L12.0391 8L5.42969 14.5418Z" fill={ fill }></path>
+            </svg>
+
+    )
+
+    export const HeartOutlineIcon = ({ stroke = "var(--color-gray-500)" }) => (
+        <svg width="26" height="26" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.298 13.6175L17.0011 14.3127L17.7042 13.6175L21.9628 9.40665L27.1512 14.542L17.0011 24.5927L6.85106 14.542L12.0394 9.40665L16.298 13.6175Z" stroke={ stroke }></path>
+        </svg>
     )
