@@ -1,22 +1,28 @@
 @import "tailwindcss";
 
 :root {
-    /* 기본 컬러 */
-    --main-color: #00cdf5;
+    --color-main: #1456fd;
+    --color-danger: #EC221F;
 
-    /* 텍스트 컬러  */
-    --txt-main-color: #161616;
-    --txt-muted-color: #4e4e4e;
+    --color-black: #161616;
+    --color-white: #FFFFFF;
 
-    --gray-01: #999999;
-    --gray-02: #B1B1B1;
-    --gray-03: #CCCCCC;
-    --gray-04: #f2f2f2;
+    --color-gray-100: #F8F8F8;
+    --color-gray-200: #F4F4F4;
+    --color-gray-300: #EEEEEE;
+    --color-gray-400: #DDDDDD;
+    --color-gray-500: #AAAAAA;
+    --color-gray-600: #888888;
+    --color-gray-700: #666666;
+    --color-gray-800: #444444;
 }
 
 body {
     font-family: 'SUIT Variable', sans-serif;
     letter-spacing: -0.02rem;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    touch-action: manipulation;
 }
 
 .container {
@@ -24,7 +30,7 @@ body {
 }
 
 
-button {
+button, details {
     cursor: pointer;
 }
 
@@ -33,34 +39,3 @@ svg {
     stroke-width: 2;
     stroke-miterlimit: 10;
 }
-
-
-/* 홈 사업자 텍스트 토글*/
-summary {
-    list-style: none;
-}
-
-.title {
-    font-size: 2.2rem;
-    line-height: 3rem;
-    font-weight: 700;
-}
-
-.subtext {
-    font-size: 1.5rem;
-    line-height: 2.3rem;
-    font-weight: 500;
-}
-
-.prdbrand {
-    font-size: 0.875rem;
-    line-height: 1.5;
-    font-weight: 700;
-}
-
-.prdname {
-    font-size: 0.8125rem;
-    line-height: 1.5;
-    font-weight: 500;
-}
-

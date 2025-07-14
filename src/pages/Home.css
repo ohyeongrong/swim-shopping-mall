@@ -4,23 +4,3 @@
 .gnb-bar {
     padding: 0 0 0 clamp(16px, calc(11.429px + 1.429vw), 32px);
 }
-
-/* 푸터 영역 */
-
-footer {
-    margin-top: 80px;
-    padding: 40px clamp(16px, calc(11.429px + 1.429vw), 32px) 100px;
-    width: 100%;
-    background-color: black;
-    color: white;
-}
-
-footer details {
-    padding: 20px 0px;
-    border-top: 1px solid var(--txt-muted-color);
-    border-bottom: 1px solid var(--txt-muted-color);
-}
-
-footer details ul {
-    margin-top: 20px;
-}
