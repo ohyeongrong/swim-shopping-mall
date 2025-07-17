@@ -13,15 +13,13 @@ function BottomSheetModal({modalContent}) {
     };
 
     return(
-        <div className="modal-overay">
-            <div className="modal-wrap">
-                <div className="btn-close">
-                    <button 
-                        type="button"
-                        onClick={()=>{
-                            reset()
-                        }}
-                    ></button>
+        <div className="z-1000 fixed inset-0 bg-[var(--color-black)]/40">
+            <div className="fixed right-0 left-0 bottom-0 bg-[var(--color-white)]">
+                <div className="flex items-center justify-center py-2">
+                    <button type="button" onClick={()=>{ reset() }}>
+                        <div className=" bg-[var(--color-gray-400)] w-10 h-1"></div>    
+                        <span className="hidden">닫기</span>
+                    </button>
                 </div>
 
                 { modalContent }

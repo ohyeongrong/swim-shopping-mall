@@ -1,4 +1,5 @@
 import CartPrdList from "@/components/cart/CartPrdList";
+import EmptyState from "@/components/common/EmptyState";
 import useCartStore from "@/store/useCartStore";
 
 function Cart() {
@@ -11,7 +12,7 @@ function Cart() {
                 {
                     cartList.length > 0
                     ? <CartPrdList/>
-                    : <p>장바구니 비었음</p>
+                    : <EmptyState type={'cart'}/>
                 }
                 
             </section>

@@ -27,7 +27,7 @@ function ProductSwiper({ products }) {
 
                             return (
                                 <SwiperSlide key={ prd.id } className="!w-[clamp(140px,25vw,180px)] !shrink-0">
-                                    <ProductCard prd={ prd }/>
+                                    <ProductCard prd={ prd } type={null}/>
                                 </SwiperSlide>
                                 )
                         })

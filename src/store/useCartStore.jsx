@@ -142,15 +142,8 @@ const useCartStore = create((set, get) => ({
     //할인금액 계싼해야함
     getTotalDiscount : () => {
         const checkedItem = get().cartList.filter(item => item.checked);
-        return checkedItem.reduce((sum, item) => sum + Math.round(item.price * (item.saleRate / 100)), 0) 
+        return checkedItem.reduce((sum, item) => sum + Math.round(item.price * (item.saleRate / 100)) * item.quantity, 0) 
     },
-
-
-    //토글
-    isVisible: false,
-    show : () => set({ isVisible: true }),
-    hide : () => set({ isVisible : false}),
-    toggle : () => set((state)=>({ isVisible: !state.isVisible })),
 
     //제품 수량
     quantity : 1,

@@ -97,3 +97,39 @@
             <path d="M16.298 13.6175L17.0011 14.3127L17.7042 13.6175L21.9628 9.40665L27.1512 14.542L17.0011 24.5927L6.85106 14.542L12.0394 9.40665L16.298 13.6175Z" stroke={ stroke }></path>
         </svg>
     )
+
+    export const CheckBoxIcon = ({ className, stroke = "var(--color-white)"}) => (
+        <svg className={ className } width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="18" height="18" transform="translate(0 0.5)" ></rect>
+            <path d="M13.5 6L8 12L5 9" stroke={ stroke } stroke-width="2"></path>
+        </svg>
+    )
+    
+    export const CloseIcon = ({ width, height, stroke = "var(--color-gray-500)" }) => (
+        <svg width={ width } height={ height } viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.9961 4.99609L11.9961 11.9961L4.99609 18.9961" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
+            <path d="M19.0039 18.9961L14.0039 13.9961" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
+            <path d="M5.00391 4.99609L10.0039 9.99609" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
+        </svg>
+    )
+
+    export const DeleteIcon = ({ fill = "var(--color-gray-300)", stroke = "var(--color-gray-500)"}) => (
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="9" fill={ fill }></circle>
+            <path d="M13 7L6.99992 13.0001" stroke={ stroke } stroke-width="2"></path>
+            <path d="M6.99609 7L12.9962 13.0001" stroke={ stroke } stroke-width="2"></path>
+        </svg>
+    )
+
+    export const PlusIcon = ({ fill = "var(--color-black)" }) => (
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" width="2" height="10" fill={ fill }></rect>
+            <rect x="10" y="4" width="2" height="10" transform="rotate(90 10 4)" fill={ fill }></rect>
+        </svg>
+    )
+
+    export const MinusIcon = ({ fill = "var(--color-gray-400)" }) => (
+        <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" width="2" height="10" transform="rotate(90 10 0)" fill={ fill }></rect>
+        </svg>
+    )

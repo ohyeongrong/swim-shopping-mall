@@ -1,10 +1,14 @@
-
 import { useState } from "react";
 import useCartStore from "@/store/useCartStore";
+import { DeleteIcon, MoreArrowIcon, PlusIcon, MinusIcon } from "@/components/common/Icon";
+import useStore from "@/store/useStore"
+import ProductCard from "../common/ProductCard";
+
 
 function OptionEditModal ({selectedPrd}) {
 
-    const { editOptQty, cartList, hide } = useCartStore();
+    const { editOptQty, cartList } = useCartStore();
+    const { hide } = useStore();
 
     const [editSelOpt, setEditSelOpt] = useState( selectedPrd.selectedOption || "");
     const [editQty, setEditQty] = useState( selectedPrd.quantity || 1);
@@ -13,21 +17,26 @@ function OptionEditModal ({selectedPrd}) {
 
     return (
         <>
-            <div className="modal-content">
-                <div className="option-penal">
-                    <select value={ editSelOpt } onChange={ e => setEditSelOpt(e.target.value) }>
-                        {
-                            selectedPrd.sizes.map((size, i)=>
-                                <option value={ size.label } key={i}>{ size.label }</option>
-                            )
-                        }
-                    </select>
+            <div className="text-sm text-[var(--color-black)] font-bold  px-[var(--spacing-16-32)] pt-4 pb-5">
+
+                <div className="w-full flex flex-col gap-0.5">
+                    <div>
+                        <select className="w-full border border-[var(--color-gray-500)] px-4 py-3.5 appearance-none" value={ editSelOpt } onChange={ e => setEditSelOpt(e.target.value) }>
+                            {
+                                selectedPrd.sizes.map((size, i)=>
+                                    <option value={ size.label } key={i}>{ size.label }</option>
+                                )
+                            }
+                        </select>
+                    </div>
+                    <div>
+                    {/* 선택 옵션 수량 조절 */}
                     {
                         selectedPrd.selectedOption
                         &&
-                        <ul className="count-list">
-                            <li className="count-item">
-                                <div>
+                        <ul className="pl-2 py-3.5">
+                            <li className="flex justify-between">
+                                <div className="flex items-center gap-1">
                                     <span>{ editSelOpt }</span>
                                     <button 
                                         type="button"
@@ -36,21 +45,32 @@ function OptionEditModal ({selectedPrd}) {
                                             setEditQty(1);
                                         }}
                                     >
-                                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="9" fill="#DDDDDD"></circle><path d="M12 6L6 12" stroke="#888888"></path><path d="M6 6L12 12" stroke="#888888"></path></svg>
+                                        <DeleteIcon/>
                                     </button>
                                 </div>
-                                <div>
-                                    <button type="button" onClick={ decrease }>-</button>
-                                    <input type="number" onChange={(e)=>{ setEditQty(e.target.value)} } value={ editQty } min="1" max="100" step="1" />
-                                    <button type="button" onClick={ increase }>+</button>
+                                {/* 수량 조절 */}
+                                <div className="flex items-center border border-[var(--color-gray-500)]">
+                                    <div className="flex justify-center items-center w-8 h-8  bg-[var(--color-gray-100)]">
+                                        <button type="button" onClick={ decrease }>
+                                            <MinusIcon/>
+                                        </button>
+                                    </div>
+                                    <input className="text-center p-0 px-2 text-xs" type="number" onChange={(e)=>{ setEditQty(e.target.value)} } value={ editQty } min="1" max="100" step="1" />
+                                    <div className="flex justify-center items-center w-8 h-8  bg-[var(--color-gray-300)]">
+                                        <button className="" type="button" onClick={ increase }>
+                                            <PlusIcon/>
+                                        </button>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
                     }
+                    </div>
 
                 </div>
             </div>
 
+            {/* 바텀액션바 - 공용 분리해서 작업 필요 */}
             <div className="btn-area">
                 <button 
                     type="button"
