@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCartStore from "@/store/useCartStore";
 import { DeleteIcon, MoreArrowIcon, PlusIcon, MinusIcon } from "@/components/common/Icon";
-import useStore from "@/store/useStore"
+import useStore from "@/store/useProdcutStore"
 import ProductCard from "../common/ProductCard";
 
 

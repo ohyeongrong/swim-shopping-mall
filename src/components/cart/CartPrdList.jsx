@@ -5,7 +5,7 @@ import OptionEditModal from "@/components/cart/OptionEditModal";
 import { useState } from "react";
 import { CheckBoxIcon, CloseIcon } from "@/components/common/Icon";
 import LikeBtn from "@/components/common/LikeBtn";
-import useStore from "@/store/useStore"
+import useStore from "@/store/useProdcutStore"
 import ProductCard from "../common/ProductCard";
 
 function CartPrdList() {

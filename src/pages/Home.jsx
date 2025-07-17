@@ -1,5 +1,5 @@
 import ProductSwiper from "@/components/common/ProductSwiper";
-import useStore from "../store/useStore";
+import useStore from "../store/useProdcutStore";
 import "@/pages/Home.css";
 import MainSwiper from "@/components/home/MainSwiper";
 import GnbSwiper from "@/components/home/GnbSwiper";

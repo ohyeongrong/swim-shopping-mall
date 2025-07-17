@@ -1,4 +1,4 @@
-import useStore from "@/store/useStore"
+import useStore from "@/store/useProdcutStore"
 import { useState } from "react";
 
 function BottomSheetModal({modalContent}) {

@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import MyLike from './pages/MyLike'
 import Product from './pages/Product'
 import { useEffect } from "react";
-import useStore from "@/store/useStore";
+import useStore from "@/store/useProdcutStore";
 import swimwearProducts from "./data/swimwearProducts";
 import Cart from "@/pages/Cart"
 import Layout from "@/components/common/Layout"

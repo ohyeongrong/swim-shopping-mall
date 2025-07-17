@@ -1,43 +1,6 @@
 @import "tailwindcss";
 
 
-/* 제품 페이지 - 쎔네일스와이퍼 컴포넌트 */
-
-.thum-area {
-    cursor: grab;
-    overflow: hidden; 
-    white-space: nowrap; 
-}
-
-.thum-area ul {
-    display: flex; 
-    aspect-ratio: 1 / 1;    
-}
-
-.thum-area li {
-    flex: 0 0 auto;
-}
-
-.thum-area img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-progress {
-    width: 100%;
-    height: 3px;
-    position: absolute;
-}
-
-progress::-webkit-progress-bar {
-    background-color: var(--gray-04);
-}
-progress::-webkit-progress-value {
-    background-color: var(--main-color);
-}
-
-
 /* 제품페이지 - 구매 버튼 */
 
 .prd-content-wrap {
@@ -83,28 +46,9 @@ progress::-webkit-progress-value {
     color: #fff;
 }
 
-/* 좋아요 버튼 */
-
-.like-button {
-    cursor: pointer;
-}
-
 
 /* 제품 상세정보 */
 
-.prd-detail-content {
-    max-height: 600px;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.prd-detail-content.expanded {
-    max-height: 9999px;
-}
-
-.detail-more {
-    position: relative;
-}
 
 .detail-more::after {
     position: absolute;
@@ -117,18 +61,6 @@ progress::-webkit-progress-value {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%); 
 }
 
-.detail-more button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 1px solid var(--color-black);
-    background: var(--color-white);
-    /* 높이 사이즈 수정 */
-    height: 3.125rem;
-    gap: 6px;
-}
 
 /* 나중에 삭제 */
 .test {

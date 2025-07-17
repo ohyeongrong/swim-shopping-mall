@@ -1,16 +1,17 @@
 
-import useStore from "@/store/useStore"
+import useProdcutStore from "@/store/useProdcutStore";
 import { useState } from "react";
+import { MoreArrowIcon } from "@/components/common/Icon"
 
 function ProductDetail() {
 
     const [expanded, setExpanded] = useState(false);
 
-    const { selectedPrd } = useStore();
+    const { selectedPrd } = useProdcutStore();
 
     return (
-        <div className="prd-detail-warp">
-            <div className={`prd-detail-content ${expanded ? "expanded" : ""}`}>
+        <>
+            <div className={`py-15 ${expanded ? 'max-h-[9999px]' : 'max-h-[700px]'} overflow-hidden transition-[max-height] duration-500 ease-in-out`}>
                 {
                     Array.isArray(selectedPrd.detailImages) &&
                     selectedPrd.detailImages.map((img, index) => (
@@ -18,31 +19,35 @@ function ProductDetail() {
                     ))
                 }
             </div>
-            <div className="detail-more container">
-                <button 
-                    onClick={() => setExpanded(!expanded)}
-                    type="button">
+            <div className="relative mb-4">
+                <div className="absolute w-full bottom-13.5 h-[150px] bg-linear-to-b from-white/0 to-white to-90%"></div>
+                <div className="px-4">
+                    <button 
+                        className="flex items-center gap-1 w-full border py-4 justify-center text-sm font-bold"
+                        onClick={() => setExpanded(!expanded)}
+                        type="button">
 
-                        {
-                            expanded
-                            ? <>
-                                상품 정보 접기
-                                <div style={{transform : 'rotate(270deg)'}}>
-                                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L5 4.94937L1 1" stroke="var(--txt-main-color)"></path></svg>
-                                </div>
-                            </>
-                            : <>
-                                상품 정보 더보기
-                                <div style={{transform : 'rotate(90deg)'}}>
-                                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 9L5 4.94937L1 1" stroke="var(--txt-main-color)"></path></svg>
-                                </div>
-                            </>
+                            {
+                                expanded
+                                ? <>
+                                    상품 정보 접기
+                                    <div style={{transform : 'rotate(0deg)'}}>
+                                        <MoreArrowIcon/>
+                                    </div>
+                                </>
+                                : <>
+                                    상품 정보 더보기
+                                    <div style={{transform : 'rotate(180deg)'}}>
+                                        <MoreArrowIcon/>
+                                    </div>
+                                </>
 
-                        }
+                            }
 
-                </button>
+                    </button>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

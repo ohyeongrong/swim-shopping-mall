@@ -1,6 +1,6 @@
 import feedbackOptions from "@/data/feedbackOptions"
 import { useState, forwardRef, useImperativeHandle, useEffect } from "react";
-import useStore from "@/store/useStore";
+import useStore from "@/store/useProdcutStore";
 import usePrdReviewStore from "@/store/usePrdReviewStore";
 import { useParams } from "react-router-dom";
 import { Duo } from "@mui/icons-material";

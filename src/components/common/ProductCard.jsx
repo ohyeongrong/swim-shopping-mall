@@ -1,11 +1,11 @@
 import LikeBtn from '@/components/common/LikeBtn'
 import { Link } from 'react-router-dom';
-import useStore from "@/store/useStore"
+import useProdcutStore from "@/store/useProdcutStore"
 import useCartStore from "@/store/useCartStore"
 
 function ProductCard({ prd, type }) {
 
-    const { dcPrice } = useStore();
+    const { dcPrice } = useProdcutStore();
     const { 
         cartList, removeCartList, toggleAllChecked, 
         toggleItemChecked, removeChecked, 
