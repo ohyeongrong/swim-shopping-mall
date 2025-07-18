@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import GoTopBtn from "@/components/common/GoTopBtn";
-import BottomActionBar from "@/components/common/BottomActionBar";
+import BottomNavBar from "@/components/common/BottomNavBar";
 
 function Layout() {
     return (
@@ -13,7 +13,7 @@ function Layout() {
             </main>
             <GoTopBtn />
             <Footer/>
-            <BottomActionBar />
+            <BottomNavBar/>
         </>
     )
 }

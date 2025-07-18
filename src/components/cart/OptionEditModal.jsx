@@ -2,7 +2,7 @@ import { useState } from "react";
 import useCartStore from "@/store/useCartStore";
 import { DeleteIcon, MoreArrowIcon, PlusIcon, MinusIcon } from "@/components/common/Icon";
 import useStore from "@/store/useProdcutStore"
-import ProductCard from "../common/ProductCard";
+import Button from '@/components/common/Button';
 
 
 function OptionEditModal ({selectedPrd}) {
@@ -17,11 +17,10 @@ function OptionEditModal ({selectedPrd}) {
 
     return (
         <>
-            <div className="text-sm text-[var(--color-black)] font-bold  px-[var(--spacing-16-32)] pt-4 pb-5">
-
-                <div className="w-full flex flex-col gap-0.5">
+            <div className="text-sm text-[var(--color-black)]  px-[var(--spacing-16-32)] py-3">
+                <div className="w-full flex flex-col gap-0.5 font-bold">
                     <div>
-                        <select className="w-full border border-[var(--color-gray-500)] px-4 py-3.5 appearance-none" value={ editSelOpt } onChange={ e => setEditSelOpt(e.target.value) }>
+                        <select className="w-full border border-[var(--color-gray-500)] px-4 py-3.5" value={ editSelOpt } onChange={ e => setEditSelOpt(e.target.value) }>
                             {
                                 selectedPrd.sizes.map((size, i)=>
                                     <option value={ size.label } key={i}>{ size.label }</option>
@@ -66,21 +65,20 @@ function OptionEditModal ({selectedPrd}) {
                         </ul>
                     }
                     </div>
-
+                </div>
+                <div>
+                    <Button 
+                        content="변경 저장" size="lg" className="w-full" 
+                        onClick={()=>{
+                            editOptQty(editSelOpt, editQty, selectedPrd)
+                            console.log(cartList);
+                            hide()
+                        }} />
                 </div>
             </div>
 
             {/* 바텀액션바 - 공용 분리해서 작업 필요 */}
-            <div className="btn-area">
-                <button 
-                    type="button"
-                    onClick={()=>{
-                        editOptQty(editSelOpt, editQty, selectedPrd)
-                        console.log(cartList);
-                        hide()
-                    }}    
-                >변경하기</button>
-            </div>
+
         </>
     )
 }

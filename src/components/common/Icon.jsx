@@ -105,7 +105,7 @@
         </svg>
     )
     
-    export const CloseIcon = ({ width, height, stroke = "var(--color-gray-500)" }) => (
+    export const CloseIcon = ({ width ="24", height= "24", stroke = "var(--color-gray-500)" }) => (
         <svg width={ width } height={ height } viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.9961 4.99609L11.9961 11.9961L4.99609 18.9961" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
             <path d="M19.0039 18.9961L14.0039 13.9961" stroke={ stroke } stroke-width="2" stroke-miterlimit="10"></path>
@@ -121,8 +121,8 @@
         </svg>
     )
 
-    export const PlusIcon = ({ fill = "var(--color-black)" }) => (
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    export const PlusIcon = ({ width ="10", height= "10", fill = "var(--color-black)" }) => (
+        <svg width={ width } height={ height } viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="4" width="2" height="10" fill={ fill }></rect>
             <rect x="10" y="4" width="2" height="10" transform="rotate(90 10 4)" fill={ fill }></rect>
         </svg>
@@ -134,18 +134,27 @@
         </svg>
     )
 
-    export const StarIcon = () => (
-        <svg 
+    export const StarIcon = ({ className, width ="14", height="14", fill = "var(--color-black)" }) => (
+        <svg
+            className={className}
             xmlns="http://www.w3.org/2000/svg" 
             xmlnsXlink="http://www.w3.org/1999/xlink" 
-            width="20" 
-            height="20" 
+            width={ width }
+            height={ height }
             viewBox="0 0 20 20" 
-            style={{ fill: 'rgb(0, 0, 0)', width: '100%', height: '100%' }}
+            fill={ fill }
         >
             <defs>
                 <path id="star-full" d="M7.157 6.698l2.165-4.59a.743.743 0 0 1 1.358 0l2.165 4.59 4.84.74c.622.096.87.895.42 1.353l-3.503 3.57.827 5.044c.106.647-.544 1.141-1.1.835l-4.328-2.382-4.329 2.382c-.556.306-1.205-.188-1.099-.835l.826-5.044-3.502-3.57c-.45-.458-.202-1.257.42-1.352l4.84-.74z"/>
             </defs>
             <use xlinkHref="#star-full" />
+        </svg>
+    )
+
+    export const SecretIcon = ({ stroke = "var(--color-black)" }) => (
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 11V6.5H12.5V13.5H4" stroke={ stroke } stroke-width="1.5"></path>
+            <path d="M7 8.75V11.25" stroke={ stroke } stroke-width="1.5"></path>
+            <path d="M10 6.5V4.5C10 2.84315 8.65685 1.5 7 1.5V1.5C5.34315 1.5 4 2.84315 4 4.5V6.5" stroke={ stroke } stroke-width="1.5"></path>
         </svg>
     )

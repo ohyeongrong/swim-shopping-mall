@@ -5,18 +5,23 @@ import ProductInquiry from "./ProductInquiry"
 import usePrdInquiryStore from "@/store/usePrdInquiryStore"
 import TapList from "@/components/common/TapList";
 import usePrdReviewStore from "@/store/usePrdReviewStore";
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
+
 
 function ProductTapMenu() {
 
     const { reviewList } = usePrdReviewStore();
     const { inquiryList } = usePrdInquiryStore();
 
+    const { filterPrdInquiryList, filterPrdReviewList } = useFilterPrdPost();
+
     const ProductTabs = [
-        { type: 'detail', label: "상세정보" },
-        { type: 'review', label: "리뷰" },
-        { type: 'inquiry', label: "문의" },
+        { type: 'detail', label: "상세정보"},
+        { type: 'review', label: "리뷰" , length: filterPrdReviewList.length },
+        { type: 'inquiry', label: "문의", length: filterPrdInquiryList.length },
     ];
 
+    
     const[onTabClick, setOnTapClick] = useState('detail');
 
 
@@ -26,13 +31,6 @@ function ProductTapMenu() {
                     tabList={ProductTabs}
                     onTabClick={onTabClick}
                     onTabChange={setOnTapClick}
-                    ListLength=
-                    { 
-                        TapList.type ==='review' 
-                        ? reviewList.length 
-                        : TapList.type === 'inquiry' 
-                        && inquiryList.length 
-                    }
                 />
                 {/* 상세정보, 리뷰, 문의에 따라 변화 */}
                 <section>

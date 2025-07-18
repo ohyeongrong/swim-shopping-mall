@@ -1,4 +1,5 @@
 import { EmptyIcon } from "@/components/common/Icon"
+import Botton from '@/components/common/Button';
 
 function EmptyState({ type, link }) {
     
@@ -17,7 +18,7 @@ function EmptyState({ type, link }) {
                 <EmptyIcon />
                 <p className="text-xs text-[var(--color-gray-600)]">{ typeFind.message }</p>
             </div>
-            <button type="button" className="bg-[var(--color-black)] text-sm text-[var(--color-white)] w-60 h-12" onClick={ link }>{ typeFind.btnMessage }</button>
+            <Botton content={ typeFind.btnMessage } size="lg" className="w-60"  onClick={ link }/>
         </div>
     )
 }

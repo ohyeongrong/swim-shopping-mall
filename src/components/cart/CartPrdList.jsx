@@ -7,6 +7,8 @@ import { CheckBoxIcon, CloseIcon } from "@/components/common/Icon";
 import LikeBtn from "@/components/common/LikeBtn";
 import useStore from "@/store/useProdcutStore"
 import ProductCard from "../common/ProductCard";
+import Button from '@/components/common/Button';
+import BottomActionBar from '@/components/common/BottomActionBar';
 
 function CartPrdList() {
     
@@ -83,16 +85,12 @@ function CartPrdList() {
                                         
                                         {/* 카트 제품 버튼 구간 */}
                                         <div className="flex justify-between gap-2">
-                                            <button
-                                                className="px-4 py-2 border border-[var(--color-gray-500)] flex-1/2 text-[var(--color-black)]"
-                                                type="button"
+                                            <Button className="w-full" variant="secondary" content="옵션 변경" size="sm" 
                                                 onClick={()=>{
                                                     setSelectedPrd(prd)
                                                     show()
-                                                }}
-                                            >
-                                                옵션 변경</button>
-                                            <button className="px-4 py-2 bg-[var(--color-black)] text-[var(--color-white)] flex-1/2" type="button">바로 구매</button>
+                                                }}/>
+                                            <Button className="w-full"  size="sm" content="바로 구매"/>
                                         </div>
 
                                         <div className="border-b border-[var(--color-gray-300)]"></div>
@@ -149,12 +147,14 @@ function CartPrdList() {
                 </ul>
             </div>
 
-            {/* 바텀액션바 - 공용 분리해서 작업하고 home꺼는 nav로 따로 컴포넌트 생성 */}
-            <div className="order-btn-warp">
-                <div className="btn-area">
-                    <button type="button">{(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 ({cartList.length}개)</button>
-                </div>
-            </div>
+            <BottomActionBar 
+                content={ 
+                    <Button 
+                    content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${cartList.length}개)`} 
+                    size="xl" className="w-full"/>
+                }
+            />
+
         </>
     )
 }

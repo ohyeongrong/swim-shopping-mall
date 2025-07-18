@@ -8,6 +8,9 @@ import OptionSelectModal from "@/components/product/OptionSelectModal";
 import SwiperSlider from "@/components/common/SwiperSlider";
 import { StarIcon } from "@/components/common/Icon"
 import usePrdReviewStore from "@/store/usePrdReviewStore";
+import useFilterPrdPost from "@/hooks/useFilterPrdPost";
+import Button from '@/components/common/Button';
+import BottomActionBar from '@/components/common/BottomActionBar';
 
 
 function Product() {
@@ -15,6 +18,8 @@ function Product() {
     const { prdId } = useParams();
     const { productsList, isVisible, show, dcPrice, hide, foundPrd, selectedPrd, thumImg } = useProdcutStore();
     const { reviewList } = usePrdReviewStore();
+
+    const { filterPrdReviewList } = useFilterPrdPost();
 
     useEffect(()=>{
         foundPrd(prdId);
@@ -26,8 +31,8 @@ function Product() {
 
     
     const reviewRatingAverage = () => {
-        if(reviewList.length > 0) {
-            return reviewList.reduce((acc, cur) => acc + cur.rating, 0) / reviewList.length
+        if(filterPrdReviewList.length > 0) {
+            return filterPrdReviewList.reduce((acc, cur) => acc + cur.rating, 0) / filterPrdReviewList.length
         } 
         return 0
     }
@@ -55,7 +60,7 @@ function Product() {
                             <div className="w-3">
                                 <StarIcon/>
                             </div>
-                            <p> { reviewRatingAverage() }점 | { reviewList.length }건 </p>
+                            <p> { reviewRatingAverage().toFixed(1) }점 | { filterPrdReviewList.length }건 </p>
                         </div>
                         <div className="price">
                                 {
@@ -78,14 +83,17 @@ function Product() {
                 <ProductTapMenu/>
 
                 {/* 상품 구매 버튼 - 이거 공용버튼으로 묶어서 재 작업 필요*/}
-                <div className="order-btn-warp">
-                    <div className="btn-area">
-                        <LikeBtn prd={ selectedPrd } dcPrice={ dcPrice }/>
-                        <button type="button" onClick={ show }>
-                            구매하기
-                        </button>
-                    </div>
-                </div>
+
+                <BottomActionBar 
+                content={ 
+                    <>
+                        <div className="absolute left-8 bottom-4.5">
+                            <LikeBtn  prd={selectedPrd} dcPrice={dcPrice}/>
+                        </div>
+                        <Button content="구매하기" size="xl" className="w-full" onClick={ show }/>
+                    </>
+                }
+                />
             </section>
 
             { isVisible && <BottomSheetModal modalContent={ <OptionSelectModal/> }/> }

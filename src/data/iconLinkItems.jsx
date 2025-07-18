@@ -1,5 +1,5 @@
 import { 
-    CategoryIcon, SearchIcon, HomeIcon, MyLikeIcon, MyPageIcon, BackArrowIcon, CartIcon
+    CategoryIcon, SearchIcon, HomeIcon, MyLikeIcon, MyPageIcon, BackArrowIcon, CartIcon, CloseIcon
 } from '@/components/common/Icon';
 
 const iconLinkItems = [
@@ -9,7 +9,7 @@ const iconLinkItems = [
     { id: "mylike", url: "/mylike", icon: <MyLikeIcon />, label: "나의 관심" },
     { id: "category", url: "/category", icon: <CategoryIcon />, label: "카테고리" },
     { id: "search", url: "/search", icon: <SearchIcon />, label: "검색" },
-    { id: "mypage", url: "/mypage", icon: <MyPageIcon />, label: "마이페이지" }
+    { id: "mypage", url: "/mypage", icon: <MyPageIcon />, label: "마이페이지" },
 ]
 
 export default iconLinkItems

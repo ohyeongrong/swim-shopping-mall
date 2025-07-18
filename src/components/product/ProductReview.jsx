@@ -4,6 +4,8 @@ import usePrdReviewStore from "@/store/usePrdReviewStore"
 import FullScreenModal from "../common/FullScreenModal";
 import { useRef } from "react";
 import useFilterPrdPost from "@/hooks/useFilterPrdPost";
+import EmptyState from "@/components/common/EmptyState"
+
 
 
 function ProductReview() {
@@ -16,21 +18,16 @@ function ProductReview() {
 
     return (
 
-        <section className="prd-review-warp">
-            <div className="review-title flex items-center">
-                <h3>리뷰 [{ filterPrdReviewList.length }]</h3>
+        <div className="px-[var(--spacing-16-32)] py-10">
+            <div>
+                <h3 className="font-bold text-xl">리뷰 <span className="text-[var(--color-gray-500)]">{ filterPrdReviewList.length }</span></h3>
             </div>
 
             { 
                 reviewList.length > 0
                 ? <ReviewList />
-                : <div>
-                    <p>리뷰가 없습니다.</p>
-                </div>
+                : <EmptyState type={'review'} link={ show }/>
             }
-
-            {/* 리뷰 있없 유무 상관없이 */}
-            <button type="button" onClick={ show }>상품 리뷰 작성하기</button>
 
             { 
                 isVisible 
@@ -48,7 +45,7 @@ function ProductReview() {
                     />
             }
 
-        </section>
+        </div>
     )
 }
 

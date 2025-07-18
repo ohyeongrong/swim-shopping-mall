@@ -1,4 +1,4 @@
-function TapList({ tabList, onTabClick, onTabChange, ListLength}) {
+function TapList({ tabList, onTabClick, onTabChange }) {
 
     return(
             <div className="text-sm font-bold">
@@ -12,7 +12,7 @@ function TapList({ tabList, onTabClick, onTabChange, ListLength}) {
                                     <div className="flex items-center gap-1">
                                         {tap.label}
                                         <span className="text-xs  text-[var(--color-gray-500)]">
-                                            {ListLength}
+                                            { tap.length > 0 && tap.length }
                                         </span>
                                     </div>
                                 </button>
