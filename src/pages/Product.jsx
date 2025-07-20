@@ -1,23 +1,27 @@
 import { Link, useParams } from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useProdcutStore from "@/store/useProdcutStore";
 import LikeBtn from "../components/common/LikeBtn";
 import ProductTapMenu from "../components/product/ProductTapMenu";
-import BottomSheetModal from "@/components/common/BottomSheetModal"
-import OptionSelectModal from "@/components/product/OptionSelectModal";
 import SwiperSlider from "@/components/common/SwiperSlider";
 import { StarIcon } from "@/components/common/Icon"
-import usePrdReviewStore from "@/store/usePrdReviewStore";
 import useFilterPrdPost from "@/hooks/useFilterPrdPost";
 import Button from '@/components/common/Button';
 import BottomActionBar from '@/components/common/BottomActionBar';
+import useCartStore from "@/store/useCartStore";
+import OptionBottomSheet from "@/components/common/OptionBottomSheet";
+
 
 
 function Product() {
 
     const { prdId } = useParams();
     const { productsList, isVisible, show, dcPrice, hide, foundPrd, selectedPrd, thumImg } = useProdcutStore();
-    const { reviewList } = usePrdReviewStore();
+    const quantity = useProdcutStore((state) => state.quantity);
+    const setQuantity = useProdcutStore((state) => state.setQuantity);
+    const { addCartList } = useCartStore();
+
+    const [selectedOption, setSelectedOption] = useState("");
 
     const { filterPrdReviewList } = useFilterPrdPost();
 
@@ -28,6 +32,27 @@ function Product() {
     useEffect(()=>{
         hide()
     },[]);
+
+
+    const handleAddCartList = () => {
+
+        if(!selectedOption){
+            alert("옵션을 먼저 선택해 주세요.")
+            return;
+        }
+
+        const cartItem = {
+            ...selectedPrd,
+            checked : true,
+            selectedOption : selectedOption,
+            quantity
+        };
+
+        addCartList(cartItem);
+        setSelectedOption("");
+        setQuantity(1);
+        hide();
+    };
 
     
     const reviewRatingAverage = () => {
@@ -53,7 +78,7 @@ function Product() {
                                 <h2 className="text-lg font-bold">{selectedPrd.name}</h2>
                             </div>
                             <div className="absolute top-0 right-0">
-                                <LikeBtn prd={selectedPrd} dcPrice={dcPrice}/>
+                                <LikeBtn prd={selectedPrd}/>
                             </div>
                         </div>
                         <div className="flex gap-1 text-xs text-[var(--color-gray-600)]">
@@ -88,7 +113,7 @@ function Product() {
                 content={ 
                     <>
                         <div className="absolute left-8 bottom-4.5">
-                            <LikeBtn  prd={selectedPrd} dcPrice={dcPrice}/>
+                            <LikeBtn  prd={selectedPrd}/>
                         </div>
                         <Button content="구매하기" size="xl" className="w-full" onClick={ show }/>
                     </>
@@ -96,7 +121,29 @@ function Product() {
                 />
             </section>
 
-            { isVisible && <BottomSheetModal modalContent={ <OptionSelectModal/> }/> }
+            { isVisible && 
+            (
+                <OptionBottomSheet
+                    mode="add"
+                    sizes={selectedPrd.sizes}
+                    selectedOption={selectedOption}
+                    setSelectedOption={setSelectedOption}
+                    quantity={quantity}
+                    setQuantity={setQuantity}            
+                    submitLabel="장바구니에 담기"
+                    showDelete={true}
+                    totalPrice={(dcPrice(selectedPrd) * quantity)}
+                    onSubmit={() => {
+                        handleAddCartList()
+                        hide();
+                    }}
+                    onClose={() => {
+                        setSelectedOption("");
+                        setQuantity(1);
+                        hide();
+                    }}
+                />
+            )}
         </>
     )
 }

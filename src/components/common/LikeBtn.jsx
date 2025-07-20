@@ -1,9 +1,11 @@
 import useMyLikeStore from "@/store/useMyLikeStore";
 import { HeartFillIcon, HeartOutlineIcon } from "@/components/common/Icon"
+import useProdcutStore from "@/store/useProdcutStore";
 
-function LikeBtn({prd, dcPrice}) {
+function LikeBtn({prd}) {
 
     const { likeList, addLikeList } = useMyLikeStore();
+    const { dcPrice } = useProdcutStore();
 
     const isLiked = likeList.some(i => i.id === prd.id);
     
@@ -16,7 +18,7 @@ function LikeBtn({prd, dcPrice}) {
                 addLikeList({
                     ...prd,
                     likedAt: new Date().toISOString(),
-                    dcPrice: dcPrice
+                    dcPrice: dcPrice(prd)
                 });
         }}>
 

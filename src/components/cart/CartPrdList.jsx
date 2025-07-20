@@ -1,27 +1,26 @@
-import { Link } from "react-router-dom"
 import useCartStore from "@/store/useCartStore"
-import BottomSheetModal from "@/components/common/BottomSheetModal";
-import OptionEditModal from "@/components/cart/OptionEditModal";
 import { useState } from "react";
 import { CheckBoxIcon, CloseIcon } from "@/components/common/Icon";
-import LikeBtn from "@/components/common/LikeBtn";
 import useStore from "@/store/useProdcutStore"
 import ProductCard from "../common/ProductCard";
 import Button from '@/components/common/Button';
 import BottomActionBar from '@/components/common/BottomActionBar';
+import OptionBottomSheet from "../common/OptionBottomSheet";
 
 function CartPrdList() {
-    
 
     const { 
         cartList, removeCartList, toggleAllChecked, 
-        toggleItemChecked, removeChecked, dcPrice, 
+        toggleItemChecked, removeChecked, editOptQty,
         getTotalProductPrice, getTotalDiscount
     } = useCartStore();
 
-    const { show, isVisible } = useStore();
+    const { show, hide, isVisible } = useStore();
 
     const [selectedPrd, setSelectedPrd] = useState(null);
+    const [editSelOpt, setEditSelOpt] = useState("");
+    const [editQty, setEditQty] = useState(1);
+
 
     return (
         <>
@@ -85,20 +84,49 @@ function CartPrdList() {
                                         
                                         {/* 카트 제품 버튼 구간 */}
                                         <div className="flex justify-between gap-2">
-                                            <Button className="w-full" variant="secondary" content="옵션 변경" size="sm" 
-                                                onClick={()=>{
-                                                    setSelectedPrd(prd)
-                                                    show()
-                                                }}/>
+                                            <Button
+                                                className="w-full"
+                                                variant="secondary"
+                                                content="옵션 변경"
+                                                size="sm"
+                                                onClick={() => {
+                                                    setSelectedPrd(prd);
+                                                    setEditSelOpt(prd.selectedOption || "");
+                                                    setEditQty(prd.quantity || 1);
+                                                    show();
+                                                }}
+                                                />
+
                                             <Button className="w-full"  size="sm" content="바로 구매"/>
                                         </div>
 
                                         <div className="border-b border-[var(--color-gray-300)]"></div>
                                         
-                                        {/* 옵션 변경 모달창 - 현재 오류 있음 닫기 안됨 */}
+                                        
                                         {
-                                            isVisible
-                                            && <BottomSheetModal modalContent={<OptionEditModal selectedPrd={selectedPrd}/> } />
+                                            isVisible && selectedPrd 
+                                            && (
+                                                <OptionBottomSheet
+                                                    sizes={selectedPrd.sizes}
+                                                    selectedOption={editSelOpt}
+                                                    setSelectedOption={setEditSelOpt}
+                                                    quantity={editQty}
+                                                    setQuantity={setEditQty}
+                                                    submitLabel="변경 저장"
+                                                    showDelete={true}
+                                                    onSubmit={() => {
+                                                        editOptQty(editSelOpt, editQty, selectedPrd);
+                                                        setSelectedPrd(null);
+                                                        hide();
+                                                    }}
+                                                    onClose={() => {
+                                                        setSelectedPrd(null);
+                                                        setEditSelOpt("");
+                                                        setEditQty(1);
+                                                        hide();
+                                                    }}
+                                                />
+                                                )
                                         }
 
                                     </div>
@@ -127,7 +155,7 @@ function CartPrdList() {
                         <strong className="text-xl font-extrabold">{(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원</strong>
                     </li>
                 </ul>
-                <div className="border-t-1 border-[]"></div>
+                <div className="border-t"></div>
                 <ul className="text-sm flex flex-col gap-2">
                     <li className="flex justify-between">
                         <p className=" text-[var(--color-gray-600)]">총 상품 금액</p>

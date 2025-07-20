@@ -1,16 +1,10 @@
 import LikeBtn from '@/components/common/LikeBtn'
 import { Link } from 'react-router-dom';
 import useProdcutStore from "@/store/useProdcutStore"
-import useCartStore from "@/store/useCartStore"
 
 function ProductCard({ prd, type }) {
 
     const { dcPrice } = useProdcutStore();
-    const { 
-        cartList, removeCartList, toggleAllChecked, 
-        toggleItemChecked, removeChecked, 
-        getTotalProductPrice, getTotalDiscount
-    } = useCartStore();
 
     const renderPrice = () => {
         if(type === 'cart') {
@@ -42,7 +36,7 @@ function ProductCard({ prd, type }) {
 
         <div className="relative">
             <div className="absolute top-0 left-17">
-                <LikeBtn dcPrice={dcPrice} prd={prd}/>
+                <LikeBtn prd={prd}/>
             </div>
             <Link to={`/product/${prd.id}`}>
                 <div className={`text-sm ${ type === 'cart' && "flex flex-row gap-3"}`}>
