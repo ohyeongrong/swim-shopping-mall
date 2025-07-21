@@ -19,7 +19,7 @@ function GnbSwiper() {
     ];
 
     return (
-        <div className="ml-4 text-[4vw]">
+        <div className="ml-4 text-sm">
             <div className='ml-[-16px]'>
                 <Swiper slidesPerView="auto"
                         freeMode={true}
