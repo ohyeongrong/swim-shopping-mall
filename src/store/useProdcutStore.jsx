@@ -23,6 +23,7 @@ const useProdcutStore = create((set, get) => ({
       }
   }),
 
+  brandFilter : (prd, brand) => prd.filter(p => p.brand === brand),
 
   dcPrice : (prd) => Math.round(prd.price * (1 - prd.saleRate / 100)),
 

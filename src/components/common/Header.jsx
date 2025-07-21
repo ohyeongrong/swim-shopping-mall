@@ -22,7 +22,7 @@ function Header() {
 
     return (
             <header className="w-full">
-                <div className="header-container">
+                <div className="px-4 py-3">
                     <div className="flex justify-between items-center">
                         <div className="flex gap-3.5">
                             { !homePath && <button type="button" onClick={() => navigate(-1)}><BackArrowIcon/></button> }

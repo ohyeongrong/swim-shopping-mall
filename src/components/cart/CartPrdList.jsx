@@ -80,7 +80,7 @@ function CartPrdList() {
                                         </div>
 
                                         {/* 제품 카드 */}
-                                        <ProductCard prd={prd} type='cart'/>
+                                        <ProductCard product={prd} direction='horizontal' showOption={true} showBrand={false} imgHeight="h-30"/>
                                         
                                         {/* 카트 제품 버튼 구간 */}
                                         <div className="flex justify-between gap-2">

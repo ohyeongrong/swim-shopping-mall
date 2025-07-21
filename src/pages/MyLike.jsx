@@ -37,7 +37,7 @@ function MyLike() {
                             </div>
                             <div className="grid grid-cols-2 gap-x-2 gap-y-10 pb-10">
                                 {
-                                    likeList.map((prd, i) => <ProductCard prd={ prd } variant="like" key={i}/>)
+                                    likeList.map((prd, i) => <ProductCard product={ prd } key={i}/>)
                                 }
                             </div>
                         </>

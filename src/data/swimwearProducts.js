@@ -1,4 +1,5 @@
 const swimwearProducts = [
+  // [1~3] 키치피치 - 머메이드 퀸, 클릭클랙, 쉘위리본
   {
     id: 1,
     name: "머메이드 퀸 더블 크로스백 페일라일락",
@@ -12,7 +13,6 @@ const swimwearProducts = [
       { label: "M", stock: 0 },
       { label: "L", stock: 3 }
     ],
-    //대표 썸네일
     image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891019/5332064dd1c0c5e8363122a38cb07111.jpg",
     thumbnails: [
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891020/0ccd5ffcef76572dafdbd2e9c8403b1a.jpg",
@@ -20,7 +20,7 @@ const swimwearProducts = [
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891022/049e7943fb14ee9b50a5c219d60a4fdf.jpg",
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891023/4f74f165f4a68ccd10c930cf882e1f8d.jpg",
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891024/a85aa40c7c66aa2d0ab240f23a1ff440.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891025/153f11606526aed2c744fa200d91e9d2.jpg",
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891025/153f11606526aed2c744fa200d91e9d2.jpg"
     ],
     detailImages: [
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/twinkle_lamer_top.jpg",
@@ -29,81 +29,104 @@ const swimwearProducts = [
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/KF2LST001_04.jpg",
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/KF2LST001_05.jpg",
       "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/KF2LST001_06.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/KF2LST00_notice.jpg",
-
-    ],
+      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767894/P_upload/swim/kitschpitch/2025/woman/KF2LST00_notice.jpg"
+    ]
   },
   {
     id: 2,
-    name: "우먼 노티컬 비키니 세트 네이비",
-    brand: "배럴",
+    name: "클릭 클랙 브이백 아이보리",
+    brand: "키치피치",
     category: "여성",
-    subCategory: "비키니",
-    price: 99000,
-    saleRate: 0,
+    subCategory: "크로스백",
+    price: 63000,
+    saleRate: 10,
     sizes: [
-      { label: "085", stock: 4 },
-      { label: "090", stock: 3 },
-      { label: "095", stock: 2 }
+      { label: "S", stock: 4 },
+      { label: "M", stock: 2 },
+      { label: "L", stock: 1 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860784/61bf48883d9d35c093ad7d0ed009224f.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891064/456cac75c33779843568e99908a350b1.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860785/525162064da83ec911708f555e12e683.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445160933/9c308ede349d6e9363e10f70db9ed62f.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860783/f195557989eab787166edd107f5c4598.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891065/bd1aba4489037bb16fcb2efa3d8a3cd4.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891066/04a42cdf783a24f6cc82b10a6cd56d5c.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891067/66bfd19a76e4ccbb89cea14ce69d2ee9.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891068/3600a3ba12d9db18f16a01bf0f097778.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/455891069/ced909f3262add7a1ec73f14455a543c.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/t_01_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/t_02_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/t_03_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/f_01_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/f_02_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/f_04_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/notice_fitting_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/p_01_B5SWWBI021NAV.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386798/socal/2025/water/td_01_B5SWWBI021NAV.jpg",
-    ],
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767901/P_upload/swim/kitschpitch/2025/woman/KF2LST004_02.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767901/P_upload/swim/kitschpitch/2025/woman/KF2LST004_03.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767901/P_upload/swim/kitschpitch/2025/woman/KF2LST004_05.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767901/P_upload/swim/kitschpitch/2025/woman/KF2LST004_06.jpg"
+    ]
   },
   {
     id: 3,
-    name: "쥬시 프룻 집업 래쉬가드 오프화이트",
-    brand: "아레나",
+    name: "쉘 위 리본 더블 크로스백 핑크",
+    brand: "키치피치",
     category: "여성",
-    subCategory: "래쉬가드",
-    price: 79000,
-    saleRate: 39,
+    subCategory: "크로스백",
+    price: 63000,
+    saleRate: 0,
     sizes: [
-      { label: "085", stock: 3 },
-      { label: "090", stock: 2 },
-      { label: "095", stock: 1 }
+      { label: "S", stock: 6 },
+      { label: "M", stock: 0 },
+      { label: "L", stock: 3 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445162317/4ddf8efccf2d7496087d68bf56a5b384.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891046/b4752c2977c6862d52ab71c4169347d6.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862357/02c3a3a516c4bacc4192e3e74e4945e1.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862358/c7f7f00a0f2f5d2a51be8d9128e6c2c7.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862359/0d641df616473640c93bef98e3c62d61.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862360/48e991213ff92142fec2e2483c6a8fbb.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862361/8a47d09c0fe2f420ee10aa64a359a2c7.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862362/5e4218c4ac9ebaebb4b3c159a71261bd.jpg"
-
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891047/2b43c4b54fdc87e242ed39386ca6960b.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891048/89f97585575000f5e41a6bba6582dc97.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891049/4ded89cfcfae2f2d9ea6cc93e2b3e27e.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891050/0c3d19e681bd583e5b89d8158e436fb9.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/product/455891051/86c0b7b22c1f3b84ff55dbe3c27bba26.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_001.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_002.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_003.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_005.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_007.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/woman/A5BL1PQ01_OWT_011.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130388178/web/P_upload/swim/arena/2025/man/A5BM1RR46_AGR_006.jpg"
-    ],
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767898/P_upload/swim/kitschpitch/2025/woman/KF2LST003_02.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767898/P_upload/swim/kitschpitch/2025/woman/KF2LST003_03.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767898/P_upload/swim/kitschpitch/2025/woman/KF2LST003_04.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767898/P_upload/swim/kitschpitch/2025/woman/KF2LST003_05.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130767898/P_upload/swim/kitschpitch/2025/woman/KF2LST003_06.jpg"
+    ]
   },
+
+  // [4~6] 후그 수영복
   {
     id: 4,
-    name: "펀 샤인 미드 크로스타이백 라임락",
+    name: "엠보스 미드 크로스 타이백 탄탄이 라벤더까만꽃",
     brand: "후그",
     category: "여성",
     subCategory: "원피스",
-    price: 94000,
+    price: 110000,
+    saleRate: 20,
+    sizes: [
+      { label: "24", stock: 2 },
+      { label: "26", stock: 2 },
+      { label: "28", stock: 2 },
+      { label: "30", stock: 2 },
+      { label: "32", stock: 2 },
+      { label: "34", stock: 2 }
+    ],
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/104657.163358497/M1.jpg",
+    thumbnails: [
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/104659.136625937/M2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/104701.181815820/M3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/104703.558035658/M4.jpg"
+    ],
+    detailImages: [
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250624/104813.497400802/2517WHT_04.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/104813.583793390/2517WHT_07.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/104813.498136248/2517WHT_08.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250624/104828.126682266/2517WHT_01.jpg"
+    ]
+  },
+  {
+    id: 5,
+    name: "엠보스 미드 클린 크로스 타이백 탄탄이 새먼엔젤",
+    brand: "후그",
+    category: "여성",
+    subCategory: "원피스",
+    price: 110000,
     saleRate: 0,
     sizes: [
       { label: "24", stock: 2 },
@@ -113,186 +136,221 @@ const swimwearProducts = [
       { label: "32", stock: 2 },
       { label: "34", stock: 2 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445157507/7625a7bd89d030c5c8b29c88142fd1e7.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/092958.519405545/M1.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860224/e2bda7e4aea4c314dfbc7ac7178fcb7c.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860225/798138b59d36f5e6d7ea39488a9db112.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448860226/ccecc83fdea5bfb49f525fbc733ba75e.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/093001.167945785/M2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/093003.266345672/M3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/093004.907378749/M4.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250624/093007.266152993/M5.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/common/FunShine25SS_TOPBANNER.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/woman/WSM2480_04.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/woman/WSM2480_05.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/woman/WSM2480_01.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/woman/WSM2480_02.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/woman/WSM2480_03.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130383376/web/P_upload/swim/hoog/2025/common/FunShine25SS_size_guide_women.jpg"
-    ],
-  },
-  {
-    id: 5,
-    name: "아가일 스퀘어 숏사각 탄탄이 모카",
-    brand: "움파",
-    category: "남성",
-    subCategory: "사각 수영복",
-    price: 58000,
-    saleRate: 0,
-    sizes: [
-      { label: "S", stock: 3 },
-      { label: "M", stock: 3 },
-      { label: "L", stock: 3 },
-      { label: "XL", stock: 2 }
-    ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445161152/244b94006c40866497e24a2adb6f2db7.png",
-    thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456314698/a0f65a53695914c18b01257d125c8a11.png",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456314699/ebf6421a7f7cf973fbde027996efda80.png",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456314700/fa2dac791d24ff9b6510a7a63b853bf0.png",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456314701/588a79896cbe31c7e0864fb64bb409b4.png"
-
-    ],
-    detailImages: [
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/186454b27fbe4.png",
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/828fc419421e6.jpg",
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/93bd7c30d4a5f.jpg",
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/fa3fc13a82974.jpg",
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/7648bf016ff90.jpg",
-      "https://cdn.imweb.me/upload/S20220318cb245a497d71f/9d74666a1fb32.jpg"
-    ],
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250624/093058.871810055/2526WHT_04.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/093058.684146799/2526WHT_05.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/093059.96474303/2526WHT_14.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250624/093124.567117374/2526WHT_01.jpg"
+    ]
   },
   {
     id: 6,
-    name: "어비스 엣지 5부 블루",
-    brand: "르망고",
-    category: "남성",
-    subCategory: "5부 수영복",
-    price: 59000,
-    saleRate: 0,
+    name: "엠보스 미드 크로스 타이백 탄탄이 라임체크",
+    brand: "후그",
+    category: "여성",
+    subCategory: "원피스",
+    price: 110000,
+    saleRate: 10,
     sizes: [
-      { label: "S", stock: 4 },
-      { label: "M", stock: 3 },
-      { label: "L", stock: 3 },
-      { label: "XL", stock: 2 },
-      { label: "2XL", stock: 2 }
+      { label: "24", stock: 2 },
+      { label: "26", stock: 2 },
+      { label: "28", stock: 2 },
+      { label: "30", stock: 2 },
+      { label: "32", stock: 2 },
+      { label: "34", stock: 2 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445165937/519285ddd0bae9aa2990ab6fb2b3374e.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/100137.38920759/M1.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448849880/5f569c6050fe90b318b94e575a18ba5a.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448849881/affd2f1a0638edaeaf270d456bde578f.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448849882/e406829db141c92d932258e2dd1431ce.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448849883/4876e94d03e89280316e8a1a4bfa82f7.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/100139.15866944/M2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/100140.820223989/M3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/100143.57975397/M4.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250624/100145.700117484/M5.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130391792/web/P_upload/swim/lemango/2024/man/LSMJM26304523.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130391792/web/P_upload/swim/lemango/2024/man/LSMJM26304523.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130391792/web/P_upload/swim/lemango/common/lemango_fabric_info.jpg"
-    ],
+      "https://swim.cdn-nhncommerce.com/20250624/100207.401476429/02WHT2521_banner.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/100226.530203367/2521WHT_04.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/100226.741389339/2521WHT_08.jpg",
+      "https://swim.cdn-nhncommerce.com/20250624/100226.818300298/2521WHT_19.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250624/100240.954271737/2521WHT_01.jpg"
+    ]
   },
+
+  // [7~9] 루프루프 가방
   {
     id: 7,
-    name: "키즈 로지 백오픈 엑스백 레드",
-    brand: "랠리",
-    category: "아동",
-    subCategory: "걸즈",
-    price: 51000,
-    saleRate: 34,
+    name: "체리밤 더블엑스백 아이보리",
+    brand: "루프루프",
+    category: "여성",
+    subCategory: "크로스백",
+    price: 87000,
+    saleRate: 10,
     sizes: [
-      { label: "70", stock: 3 },
-      { label: "75", stock: 2 },
-      { label: "80", stock: 2 },
-      { label: "85", stock: 2 },
-      { label: "90", stock: 1 }
+      { label: "XS", stock: 3 },
+      { label: "S", stock: 5 },
+      { label: "M", stock: 2 },
+      { label: "L", stock: 0 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445170013/c833ae74812fe1aec7a3d43441e5f3f6.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250712/131607.628423836/썸네일_SU%20Cherry%20Bomb%20Ivory_롯데면세점2.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/453551505/0dcbe39a587cf2fba7009db02dad6f39.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/453551506/1a12b3b42d48dff6a451e98f61a21441.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/453551507/9d2b5252361c2686fb80372282455102.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/453551508/67b7394f337c529ad6494041a1a10107.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/453551510/5c0badea89cbb5e6acb9a618a83b3213.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250712/131609.915420314/썸네일_SU%20Cherry%20Bomb%20Ivory_롯데면세점3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250712/131603.160572919/썸네일_SU%20Cherry%20Bomb%20Ivory_롯데면세점1.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-k12B/migration/78635/content/130395857/web/P_upload/swim/rally/2025/kids/PSGA181_01.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-k12B/migration/78635/content/130395857/web/P_upload/swim/rally/2025/kids/PSGA181_02.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-k12B/migration/78635/content/130395857/web/P_upload/swim/rally/2025/kids/PSGA181_03.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-k12B/migration/78635/content/130395857/web/P_upload/swim/rally/2025/kids/PSGA181_04.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-k12B/migration/78635/content/130395857/web/P_upload/swim/rally/2025/kids/PSGA181_05.jpg"
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Cherry%20Bomb%20Ivory/SU%20Cherry%20Bomb%20Ivory1.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Cherry%20Bomb%20Ivory/SU%20Cherry%20Bomb%20Ivory3.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Cherry%20Bomb%20Ivory/SU%20Cherry%20Bomb%20Ivory5.jpg"
     ]
   },
   {
     id: 8,
-    name: "키즈 에센셜 베이직 버블 5부 네이비스카이",
-    brand: "센티",
-    category: "아동",
-    subCategory: "보이",
-    price: 48000,
-    saleRate: 30,
+    name: "밀키 스트라이프 크로스백 블루 클라우드",
+    brand: "루프루프",
+    category: "여성",
+    subCategory: "크로스백",
+    price: 87000,
+    saleRate: 0,
     sizes: [
-      { label: "7호", stock: 2 },
-      { label: "9호", stock: 2 },
-      { label: "11호", stock: 2 },
-      { label: "13호", stock: 2 },
-      { label: "15호", stock: 1 }
+      { label: "XS", stock: 2 },
+      { label: "S", stock: 2 },
+      { label: "M", stock: 3 },
+      { label: "L", stock: 1 }
     ],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445160988/2af31c8ea2d2dd236fbe4759e7bfd663.jpg",
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250618/180441.654935438/2.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862634/27decf90fc665b6861808cbd8dd8710c.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862635/029285943d1a64be2e301f7d68380e5c.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862636/5ee520374ddfaf7479ede8559991d52e.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448862639/429c97258ceebe3bc3b553fe29d1b046.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250618/180511.292014461/썸네일_SU%20Milky%20Stripes%20Blue%20cloud_2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250618/180518.265583611/썸네일_SU%20Milky%20Stripes%20Blue%20cloud_1.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386853/web/P_upload/swim/senti/2025/kids/MSTJ_B202.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130386853/web/P_upload/swim/senti/common/AQUA_TENSION.jpg"
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Blue%20cloud/SU%20Milky%20Stripes%20Blue%20cloud1.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Blue%20cloud/SU%20Milky%20Stripes%20Blue%20cloud3.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Blue%20cloud/SU%20Milky%20Stripes%20Blue%20cloud4.jpg"
     ]
   },
   {
     id: 9,
-    name: "양각 실리콘수모",
-    brand: "스웨이브",
-    category: "용품",
-    subCategory: "수모",
-    price: 10000,
-    saleRate: 0,
-    sizes: [],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445164812/4229702af615067ff12ad65a6ed612d9.jpg",
+    name: "밀키 스트라이프 브이백 핑크 캔디",
+    brand: "루프루프",
+    category: "여성",
+    subCategory: "크로스백",
+    price: 87000,
+    saleRate: 15,
+    sizes: [
+      { label: "XS", stock: 4 },
+      { label: "S", stock: 2 },
+      { label: "M", stock: 1 },
+      { label: "L", stock: 0 }
+    ],
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250618/175407.619877906/1.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448814022/baf10ffc2df83ac963a9ae5508ed3f05.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448814023/69773bc7185e9feff202ef049fe39df9.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448814024/cf085dc804cb28dbe040ede4e54a7fbb.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/448814025/062ce1b4a93564f9012ebac4d807d26d.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250618/175423.789246197/썸네일_SU%20Milky%20Stripes%20Pink%20candy_2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250618/175554.792006749/썸네일_SU%20Milky%20Stripes%20Pink%20candy_1.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130390670/P_upload/swim/swave/2023/etc/SW_ECS001_01.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130390670/P_upload/swim/swave/2023/etc/SW_ECS001_04.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/content/130390670/P_upload/swim/swave/2023/etc/SW_ECS001_05.jpg"
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Pink%20candy/SU%20Milky%20Stripes%20Pink%20candy1.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Pink%20candy/SU%20Milky%20Stripes%20Pink%20candy3.jpg",
+      "https://gi.esmplus.com/isodang/2025%20Summer/Training/SU%20Milky%20Stripes%20Pink%20candy/SU%20Milky%20Stripes%20Pink%20candy4.jpg"
+    ]
+  },
+
+  // [10~12] 아레나 수영복
+  {
+    id: 10,
+    name: "마린 플레이어 스트랩 홀백 네이비",
+    brand: "아레나",
+    category: "여성",
+    subCategory: "수영복",
+    price: 119000,
+    saleRate: 20,
+    sizes: [
+      { label: "M", stock: 3 },
+      { label: "L", stock: 2 },
+      { label: "XL", stock: 0 }
     ],
-    colors: [
-      "블랙", "딥그린", "페일라일락", "페일민트", "페일블루", "페일라벤더", "민트"
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/161413.778965996/4.jpg",
+    thumbnails: [
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/161418.80286334/1.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/161419.494880014/2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/161421.756668747/3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/161424.108574153/5.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/161428.687686137/6.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/161431.243214565/8.jpg",
+    ],
+    detailImages: [
+      "https://swim.cdn-nhncommerce.com/20250619/161556.894299782/A5BL1LO05_NVY_001.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/161556.723823770/A5BL1LO05_NVY_002.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/161556.860596576/A5BL1LO05_NVY_003.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/161556.812537515/A5BL1LO05_NVY_012.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/161556.717690882/A5BL1LO05_NVY_013.jpg"
     ]
   },
   {
-    id: 10,
-    name: "하이퍼 엘리트 미러 수경 블루 아시안핏",
-    brand: "스피도",
-    category: "용품",
-    subCategory: "수경",
-    price: 108000,
-    saleRate: 0,
-    sizes: [],
-    image: "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/445160577/bcf2ef51a9933212b0aca6a86e04ad3d.jpg",
+    id: 11,
+    name: "마린 플레이어 싱글 크로스 스트랩백 네이비",
+    brand: "아레나",
+    category: "여성",
+    subCategory: "수영복",
+    price: 119000,
+    saleRate: 10,
+    sizes: [
+      { label: "M", stock: 5 },
+      { label: "L", stock: 4 },
+      { label: "XL", stock: 1 }
+    ],
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/160112.811334472/3.jpg",
     thumbnails: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456332764/532c1ee1eedd470de62840baf4c5d1f7.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456332765/07f04734eae7d945db49831111bf0eca.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-L0e8/migration/78635/product/456332766/60484bdbc6aee59f5f8d78691f80b5c2.jpg"
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/160114.889792778/1.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/160110.739765203/2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/160120.49896825/4.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/160122.386230747/5.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/160124.915504711/6.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-k12B/20250619/160127.815119495/8.jpg"
     ],
     detailImages: [
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/content/130386442/web/P_upload/swim/speedo/2025/goggle/8_1281917966_001.jpg",
-      "https://shopby-images.cdn-nhncommerce.com/Mall-No-3Dsg/migration/78635/content/130386442/web/P_upload/swim/speedo/2025/goggle/8_1281917966_002.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250619/160237.816131131/A5BL1LO04_NVY_001.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/160237.839114824/A5BL1LO04_NVY_002.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/160237.757391652/A5BL1LO04_NVY_003.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/160237.782287269/A5BL1LO04_NVY_012.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/160237.705825651/A5BL1LO04_NVY_013.jpg"
+    ]
+  },
+  {
+    id: 12,
+    name: "마린 플레이어 싱글 크로스 스트랩백 화이트",
+    brand: "아레나",
+    category: "여성",
+    subCategory: "수영복",
+    price: 119000,
+    saleRate: 0,
+    sizes: [
+      { label: "M", stock: 2 },
+      { label: "L", stock: 3 },
+      { label: "XL", stock: 2 }
     ],
-    colors: ["블루", "블랙", "화이트"]
+    image: "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155146.887306690/1.jpg",
+    thumbnails: [
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155153.539684215/2.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155155.296033675/3.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155157.487071762/4.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155159.456380773/5.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155201.452642392/6.jpg",
+      "https://swim.cdn-nhncommerce.com/Mall-No-3Dsg/20250619/155203.955940221/8.jpg"
+    ],
+    detailImages: [
+      "https://swim.cdn-nhncommerce.com/Mall-No-L0e8/20250619/155224.659881776/A5BL1LO04_WHT_001.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/155224.578670699/A5BL1LO04_WHT_002.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/155224.645243822/A5BL1LO04_WHT_003.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/155224.499065186/A5BL1LO04_WHT_012.jpg",
+      "https://swim.cdn-nhncommerce.com/20250619/155224.466947038/A5BL1LO04_WHT_013.jpg"
+    ]
   }
-];
+]
 
 
 export default swimwearProducts;

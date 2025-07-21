@@ -68,7 +68,7 @@ function Product() {
                 {/* 상품 정보 영역 */}
                 <div>
                     {/* 상품 섬네일 */}
-                    <SwiperSlider imageList={thumImg} paginationType={'progressbar'}/>
+                    <SwiperSlider imageList={thumImg} paginationType={'progressbar'} sildeView="1"/>
 
                     {/* 상품 기본 정보 */}
                     <div className="px-[var(--spacing-16-32)] py-4 pb-8 flex flex-col gap-2">
