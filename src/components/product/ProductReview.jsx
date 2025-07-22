@@ -17,18 +17,19 @@ function ProductReview() {
     const { filterPrdReviewList } = useFilterPrdPost();
 
     return (
-
-        <div className="px-[var(--spacing-16-32)] py-10">
-            <div>
-                <h3 className="font-bold text-xl">리뷰 <span className="text-[var(--color-gray-500)]">{ filterPrdReviewList.length }</span></h3>
+        <>
+            <div className="px-4 lg:px-0 py-10">
+                <div>
+                    <h3 className="font-bold text-xl">리뷰 <span className="text-[var(--color-gray-500)]">{ filterPrdReviewList.length }</span></h3>
+                </div>
+    
+                { 
+                    reviewList.length > 0
+                    ? <ReviewList />
+                    : <EmptyState type={'review'} link={ show }/>
+                }
+    
             </div>
-
-            { 
-                reviewList.length > 0
-                ? <ReviewList />
-                : <EmptyState type={'review'} link={ show }/>
-            }
-
             { 
                 isVisible 
                 && <FullScreenModal 
@@ -44,9 +45,8 @@ function ProductReview() {
                     }}
                     />
             }
-
-        </div>
-    )
+        </>
+)
 }
 
 export default ProductReview

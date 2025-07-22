@@ -21,7 +21,7 @@ function ProductDetail() {
             </div>
             <div className="relative mb-4">
                 <div className="absolute w-full bottom-[50px] h-[150px] bg-linear-to-b from-white/0 to-white to-90%"></div>
-                <div className="px-4">
+                <div className="px-4 lg:px-0">
                     <Button
                         onClick={() => setExpanded(!expanded)}
                         variant="secondary"

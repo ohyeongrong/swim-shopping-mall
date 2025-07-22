@@ -16,7 +16,7 @@ function ProductInquiry() {
     
     return(
         <>
-            <div className="px-[var(--spacing-16-32)] py-10">
+            <div className="px-4 lg:px-0 py-10">
                 <div>
                     <h3 className="font-bold text-xl">상품문의 <span className="text-[var(--color-gray-500)]">{ filterPrdInquiryList.length }</span></h3>
                 </div>
@@ -28,8 +28,6 @@ function ProductInquiry() {
                 }
 
             </div>
-
-            
 
             { 
                 isVisible 

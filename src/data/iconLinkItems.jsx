@@ -10,6 +10,7 @@ const iconLinkItems = [
     { id: "category", url: "/category", icon: <CategoryIcon />, label: "카테고리" },
     { id: "search", url: "/search", icon: <SearchIcon />, label: "검색" },
     { id: "mypage", url: "/mypage", icon: <MyPageIcon />, label: "마이페이지" },
+    { id: "login", url: "/login", icon: <MyPageIcon />, label: "로그인" },
 ]
 
 export default iconLinkItems

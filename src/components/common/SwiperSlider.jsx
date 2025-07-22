@@ -25,6 +25,8 @@ function SwiperSlider({ sildeView = "auto", imageList, paginationType, renderSli
                     lazy={true}
                     preloadImages={false}
                     watchSlidesProgress={true}
+                    observer={true}
+                    observeParents={true}
                     {...options}
                 >
                     { imageList.map((item, i) => (

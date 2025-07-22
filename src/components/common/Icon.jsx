@@ -1,6 +1,6 @@
 
-    export const Logo = ({ fill = "var(--color-black)" }) => (
-        <svg width="110" height="20" viewBox="0 0 110 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    export const Logo = ({ width = "110", height= "20", fill = "var(--color-black)" }) => (
+        <svg width={width} height={height} viewBox="0 0 110 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_3203_116318)"><path d="M0 9.61773C0 5.28899 2.16268 2.55273 6.44757 2.55273C9.95645 2.55273 11.7885 4.25319 12.3216 7.27623L9.98006 7.76207C9.49422 5.75459 8.47867 4.73904 6.42732 4.73904C3.59998 4.73904 2.52032 6.61494 2.52032 9.61773C2.52032 12.4451 3.69107 14.186 6.51504 14.186C9.33902 14.186 10.1589 12.6846 10.1589 11.163H6.45094V9.10827H12.5206V16.0619H10.2027V13.103H9.98344C9.40987 14.8912 8.08392 16.2812 5.59059 16.2812C2.29764 16.2846 0 14.0544 0 9.61773Z" fill={ fill }></path>
             <path d="M21.3242 13.5894H21.0813C20.5516 15.2663 19.3606 16.2818 17.5252 16.2818C15.6898 16.2818 14.3672 15.3979 14.3672 13.3667C14.3672 11.5111 15.4941 10.1649 18.119 10.1649H21.2095V9.45975C21.2095 8.11355 20.6562 7.34092 19.202 7.34092C17.9874 7.34092 17.2823 7.95835 17.0157 9.17296L14.7653 8.6635C15.1634 6.69988 16.6412 5.44141 19.2897 5.44141C22.2925 5.44141 23.5712 6.85508 23.5712 9.43613V16.0591H21.3208V13.5861L21.3242 13.5894ZM21.2129 12.1555V11.7371H18.5205C17.3295 11.7371 16.6446 12.1791 16.6446 13.0395C16.6446 13.7885 17.1068 14.4295 18.4564 14.4295C20.113 14.4295 21.2163 13.4578 21.2163 12.1555H21.2129Z" fill={ fill }></path>
             <path d="M28.3774 16.0632H26.0156V5.68841H28.3335V8.42467H28.5326C29.1061 6.5049 30.4321 5.42188 32.1764 5.42188C34.3391 5.42188 35.3783 6.87941 35.3783 9.12982V16.0632H33.0165V9.75062C33.0165 8.49214 32.4632 7.56432 31.0293 7.56432C29.4402 7.56432 28.3807 8.62373 28.3807 10.1926V16.0666L28.3774 16.0632Z" fill={ fill }></path>
@@ -26,8 +26,8 @@
         </svg>
     )
 
-    export const SearchIcon = ({ stroke = "var(--color-black)" }) => (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    export const SearchIcon = ({ width = "24", height ="24", stroke = "var(--color-black)" }) => (
+        <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="10.625" cy="10.125" r="7.125" stroke={ stroke } stroke-width="2"></circle>
             <path d="M17 17.75L20.7822 21.5322" stroke={ stroke } stroke-width="2"></path>
         </svg>
@@ -156,5 +156,17 @@
             <path d="M1.5 11V6.5H12.5V13.5H4" stroke={ stroke } stroke-width="1.5"></path>
             <path d="M7 8.75V11.25" stroke={ stroke } stroke-width="1.5"></path>
             <path d="M10 6.5V4.5C10 2.84315 8.65685 1.5 7 1.5V1.5C5.34315 1.5 4 2.84315 4 4.5V6.5" stroke={ stroke } stroke-width="1.5"></path>
+        </svg>
+    )
+
+    export const LoginIcon = ({ fill = "var(--color-black)" }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill={fill}>
+            <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+        </svg>
+    )
+
+    export const MenuIcon = ({ fill = "var(--color-black)" }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill={fill}>
+            <path d="M120-680v-80h720v80H120Zm0 480v-80h720v80H120Zm0-240v-80h720v80H120Z"/>
         </svg>
     )

@@ -16,7 +16,7 @@ function InquiryList() {
     };
 
     return (
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 pb-4">
             <ul className="flex flex-col w-full">
 
                 {/* 문의글 리스트 반복 */}

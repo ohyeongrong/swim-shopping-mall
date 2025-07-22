@@ -23,10 +23,10 @@ function BrandFilterList() {
     return (
             <div className='flex flex-col gap-2 my-16'>
                 <div className='px-4'>
-                    <h2 className='text-2xl'>뉴 시즌 셀렉션</h2>
+                    <h2 className='text-2xl lg:text-[28px]'>뉴 시즌 셀렉션</h2>
                 </div>
                 <div>
-                    <div className="ml-4 text-xs text-[var(--color-gray-600)]">
+                    <div className="ml-4 text-xs md:text-sm text-[var(--color-gray-600)]">
                         <div className='ml-[-16px]'>
                             <Swiper slidesPerView="auto"
                                     freeMode={true}

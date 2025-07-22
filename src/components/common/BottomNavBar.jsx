@@ -17,7 +17,7 @@ const [onIconChange, setOnIconChange] = useState('home');
 const  navigate = useNavigate();
 
     return (
-        <div className="z-98 fixed bottom-0 border-t border-[var(--color-gray-300)] bg-[var(--color-white)] w-full px-6 py-2">
+        <div className="lg:hidden z-98 fixed bottom-0 border-t border-[var(--color-gray-300)] bg-[var(--color-white)] w-full px-6 py-2">
             <nav>
                 <ul className="flex justify-between items-center">
                     {

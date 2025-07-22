@@ -1,4 +1,8 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 import ProductCard from '@/components/common/ProductCard'
 
 function ProductSwiper({ product }) {
@@ -6,18 +10,32 @@ function ProductSwiper({ product }) {
     return (
 <>
         <section className="ml-[16px]">
-            <div className="ml-[-16px]">
+            <div className="ml-[-16px] lg:ml-0">
                 <Swiper
-                    className="!pl-[16px]"
+                    modules={[Navigation]}
+                    className="!pl-[16px] lg:!pl-0"
                     slidesPerView="auto"
-                    spaceBetween={8}
-                    freeMode={true} 
+                    freeMode={true}
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 3.1,
+                            spaceBetween: 4
+                        },
+                        768: {
+                            slidesPerView: 4.1,
+                            spaceBetween: 6
+                        },
+                        1024: {
+                            slidesPerView: 6,
+                            spaceBetween: 8,
+                        },
+                    }} 
                 >
                     {
                         product.map((prd) => {
 
                             return (
-                                <SwiperSlide key={ prd.id } className="!w-[clamp(140px,25vw,180px)] !shrink-0">
+                                <SwiperSlide key={ prd.id } >
                                     <ProductCard product={prd} direction='vertical'/>
                                 </SwiperSlide>
                                 )

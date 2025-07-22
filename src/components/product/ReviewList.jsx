@@ -18,10 +18,6 @@ function ReviewList() {
 
     return (
         <div>
-            <div className="review-sort-wrap flex justify-end">
-                {/* 이 필터 임시 */}
-                <LikeSort/>
-            </div>
             <div className="flex flex-col items-center gap-4">
                 <ul className="flex flex-col w-full">
                     {/* 리뷰 리스트 반복 */}
@@ -94,10 +90,9 @@ function ReviewList() {
                     }
 
                 </ul>
-                {/* 작성 버튼 */}
-                <div className="w-full">
-                    <Button content="상품 리뷰 작성하기" size="lg" className="w-full"  onClick={ show }/>
-                </div>
+
+                <Button content="상품 리뷰 작성하기" size="lg" className="w-full"  onClick={ show }/>
+
             </div>
         </div>
     )

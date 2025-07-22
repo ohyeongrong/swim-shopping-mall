@@ -58,7 +58,7 @@ function ProductCard({
                         {/* showOption - true / false */}
                         { showOption && <p className="text-xs">사이즈 { product.selectedOption } / 수량 { product.quantity }</p>}
                     </div>
-                    <div className="text-[15px] font-bold text-[var(--color-black)]">
+                    <div className="text-base font-bold text-[var(--color-black)]">
                         { renderPrice() }
                     </div>
                 </div>
@@ -68,7 +68,7 @@ function ProductCard({
 
     return (
 
-        <div className="relative">
+        <div className="relative flex-1">
             {/* 찜 버튼 */}
             { showLikeBtn && (
                 <div className={`absolute ${ direction === 'horizontal' ? "left-1" : 'right-1 top-1'}`}>

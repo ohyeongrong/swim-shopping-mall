@@ -10,6 +10,7 @@ import Button from '@/components/common/Button';
 import BottomActionBar from '@/components/common/BottomActionBar';
 import useCartStore from "@/store/useCartStore";
 import OptionBottomSheet from "@/components/common/OptionBottomSheet";
+import OptionSelectorPC from "@/components/common/OptionSelectorPC";
 
 
 
@@ -64,24 +65,25 @@ function Product() {
 
     return (
         <>
-            <section>
+            <section className="lg:max-w-[1440px] lg:m-auto relative">
                 {/* 상품 정보 영역 */}
-                <div>
+                <div className="grid grid-cols-1 lg:grid-cols-5">
                     {/* 상품 섬네일 */}
-                    <SwiperSlider imageList={thumImg} paginationType={'progressbar'} sildeView="1"/>
-
+                    <div className="order-1 flex flex-col gap-8 col-span-3 lg:pb-30">
+                        <SwiperSlider imageList={thumImg} paginationType={'progressbar'} sildeView="1"/>
+                    </div>
                     {/* 상품 기본 정보 */}
-                    <div className="px-[var(--spacing-16-32)] py-4 pb-8 flex flex-col gap-2">
+                    <aside className="order-2 col-span-2 p-4 lg:p-16 pb-8 flex flex-col gap-2 lg:gap-4 lg:sticky top-10 self-start">
                         <div className="relative flex flex-col gap-2">
                             <div className="flex flex-col gap-1">
-                                <Link className="text-sm">{selectedPrd.brand}</Link>
-                                <h2 className="text-lg font-bold">{selectedPrd.name}</h2>
+                                <Link className="text-sm lg:text-base">{selectedPrd.brand}</Link>
+                                <h2 className="text-lg lg:text-2xl font-bold">{selectedPrd.name}</h2>
                             </div>
                             <div className="absolute top-0 right-0">
                                 <LikeBtn prd={selectedPrd}/>
                             </div>
                         </div>
-                        <div className="flex gap-1 text-xs text-[var(--color-gray-600)]">
+                        <div className="flex gap-1 text-xs lg:text-sm text-[var(--color-gray-600)]">
                             <div className="w-3">
                                 <StarIcon/>
                             </div>
@@ -91,24 +93,44 @@ function Product() {
                                 {
                                     selectedPrd.saleRate > 0
                                     ? <>
-                                        <del className="text-sm  text-[var(--color-gray-500)]">{(selectedPrd.price).toLocaleString()}원</del>
-                                        <div className="flex gap-1 text-xl">
+                                        <del className="text-sm lg:text-base text-[var(--color-gray-500)]">{(selectedPrd.price).toLocaleString()}원</del>
+                                        <div className="flex gap-1 text-xl lg:text-2xl">
                                             <strong className="text-[var(--color-main)]">{ selectedPrd.saleRate }%</strong>
                                             <strong>{(dcPrice(selectedPrd)).toLocaleString()}원</strong>
                                         </div>
                                     </>
-                                    :   <div className="text-xl">
+                                    :   <div className="text-xl lg:text-2xl">
                                             <strong>{dcPrice(selectedPrd).toLocaleString()}원</strong>
                                         </div>
                                 }
                         </div>
+                        <div className="hidden lg:block lg: pt-10">
+                            <OptionSelectorPC
+                                mode="add"
+                                sizes={selectedPrd.sizes}
+                                selectedOption={selectedOption}
+                                setSelectedOption={setSelectedOption}
+                                quantity={quantity}
+                                setQuantity={setQuantity}            
+                                showDelete={true}
+                                totalPrice={(dcPrice(selectedPrd) * quantity)}
+                                onSubmit={() => {
+                                    handleAddCartList()
+                                }}
+                                onClose={() => {
+                                    setSelectedOption("");
+                                    setQuantity(1);
+                                }}
+                            />
+                        </div>
+                    </aside>
+
+                    <div className="order-3 col-span-3">
+                        <ProductTapMenu/>
                     </div>
                 </div>
-                
-                <ProductTapMenu/>
 
-                {/* 상품 구매 버튼 - 이거 공용버튼으로 묶어서 재 작업 필요*/}
-
+                {/* 모바일 구매 버튼*/}
                 <BottomActionBar 
                 content={ 
                     <>
@@ -121,6 +143,7 @@ function Product() {
                 />
             </section>
 
+            {/* 모바일 바텀 옵션 시트 */}
             { isVisible && 
             (
                 <OptionBottomSheet

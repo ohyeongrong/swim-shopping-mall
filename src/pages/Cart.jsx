@@ -2,6 +2,8 @@ import CartPrdList from "@/components/cart/CartPrdList";
 import EmptyState from "@/components/common/EmptyState";
 import useCartStore from "@/store/useCartStore";
 import { useNavigate } from "react-router-dom";
+import { CheckBoxIcon, CloseIcon, MoreArrowIcon } from "@/components/common/Icon";
+
 
 function Cart() {
 
@@ -10,7 +12,7 @@ function Cart() {
 
     return (
         <>
-            <section> 
+            <section className="lg:max-w-[1440px] lg:m-auto"> 
                 {
                     cartList.length > 0
                     ? <CartPrdList/>

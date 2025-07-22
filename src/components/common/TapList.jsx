@@ -1,7 +1,7 @@
 function TapList({ tabList, onTabClick, onTabChange }) {
 
     return(
-            <div className="text-sm font-bold">
+            <div className="text-sm lg:text-base font-bold sticky top-0 bg-white">
                 <ul className="flex w-full justify-center items-center text-center">
                     {
                         tabList.map((tap, i)=>

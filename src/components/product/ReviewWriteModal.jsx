@@ -5,18 +5,17 @@ import usePrdReviewStore from "@/store/usePrdReviewStore";
 import { useParams } from "react-router-dom";
 import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import { StarIcon, PlusIcon, DeleteIcon } from "@/components/common/Icon";
-
-
+import { useMediaQuery } from 'react-responsive';
 
 const ReviewWriteModal = forwardRef((props, ref) => {
 
         const { prdId } = useParams();
 
         const { reviewList, isVisible } = usePrdReviewStore();
-
+        const isMobile = useMediaQuery({ maxWidth: 767 });
         const { selectedPrd } = useStore(); //나중에 구매 상품 생기면 삭제하면 될듯
 
-        useBodyScrollLock(isVisible)
+        useBodyScrollLock(isVisible && isMobile)
 
         const ratingStar = 5;
         const [rating, setRating] = useState(0);
@@ -151,7 +150,7 @@ const ReviewWriteModal = forwardRef((props, ref) => {
                                 setImages(prev => [...prev, ...newFile]) 
                             }}
                         />
-                        <div className="w-14 h-14 text-[var(--color-gray-600)] border border-[var(--color-gray-400)] flex flex-col items-center justify-center text-xs">
+                        <div className="w-14 h-14 text-[var(--color-gray-600)] border border-[var(--color-gray-400)]  bg-[var(--color-white)] flex flex-col items-center justify-center text-xs">
                             <PlusIcon width="12" height="12" fill="var(--color-gray-400)"/>
                             { images.length }/5
                         </div>
@@ -180,7 +179,7 @@ const ReviewWriteModal = forwardRef((props, ref) => {
                 </div>
 
                 <textarea
-                    className="px-4 py-3 border border-[var(--color-gray-400)] h-60 focus:outline-none"
+                    className="px-4 py-3 border border-[var(--color-gray-400)]  bg-[var(--color-white)] h-60 focus:outline-none"
                     id="review-write" 
                     placeholder="구매하신 아이템의 후기를 20자이상 넘겨주세요."
                     maxLength="5000"
@@ -205,7 +204,7 @@ const ReviewWriteModal = forwardRef((props, ref) => {
                         placeholder="키를 입력해주세요."
                         required
                         onChange={(e) => setHeight(e.target.value)}
-                        className="px-3 py-2 border border-[var(--color-gray-400)] focus:outline-none w-full placeholder:text-xs"
+                        className="px-3 py-2 border border-[var(--color-gray-400)] focus:outline-none w-full placeholder:text-xs  bg-[var(--color-white)]"
                         />
                         <p className="text-sm">cm</p>
                     </div>
@@ -224,7 +223,7 @@ const ReviewWriteModal = forwardRef((props, ref) => {
                             placeholder="몸무게를 입력해주세요."
                             required
                             onChange={(e) => setWeight(e.target.value)}
-                            className="px-3 py-2 border border-[var(--color-gray-400)] focus:outline-none w-full placeholder:text-xs"
+                            className="px-3 py-2 border border-[var(--color-gray-400)]  bg-[var(--color-white)] focus:outline-none w-full placeholder:text-xs"
                             />
                             <p className="text-sm">kg</p>
                         </div>

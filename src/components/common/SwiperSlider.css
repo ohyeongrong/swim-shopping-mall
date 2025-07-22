@@ -1,3 +1,8 @@
+.swiper {
+    width: 100%;
+    height: auto; /* 또는 고정 높이 */
+}
+
 .swiper-pagination-progressbar {
     top: auto !important;
     bottom: 0 !important; 
@@ -9,20 +14,32 @@
     background: var(--color-black) !important;
 }
 
+/* 기본: 모든 슬라이드에 오버레이 보이도록 설정 */
 .swiper-slide .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* 어두운 반투명 검정색 */
+    background-color: rgba(0, 0, 0, 0.4);
     z-index: 1;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s ease;
 }
 
-/* prev, next 슬라이드는 오버레이 표시 */
-.swiper-slide-prev .overlay,
-.swiper-slide-next .overlay {
-    opacity: 1;
+/* 모바일: active 슬라이드만 오버레이 숨김 */
+@media screen and (max-width: 1279px) {
+    .swiper-slide-active .overlay {
+        opacity: 0;
+    }
 }
+
+/* PC: active, prev, next 슬라이드는 오버레이 숨김 */
+@media screen and (min-width: 1280px) {
+    .swiper-slide-active .overlay,
+    .swiper-slide-prev .overlay,
+    .swiper-slide-next .overlay {
+        opacity: 0;
+    }
+}
+
 
 
 .swiper-pagination-fraction {

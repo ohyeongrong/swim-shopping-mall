@@ -2,12 +2,14 @@ import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import usePrdInquiryStore from "@/store/usePrdInquiryStore";
 import { useState, forwardRef, useImperativeHandle } from "react";
 import { useParams } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 
 const InquiryWriteModal = forwardRef((props, ref) => {
 
     const { isVisible, hide, addInquiryList, inquiryList }  = usePrdInquiryStore();
+    const isMobile = useMediaQuery({ maxWidth: 767 });
 
-    useBodyScrollLock(isVisible)
+    useBodyScrollLock(isVisible && isMobile)
 
     const [radioChecked, setRadioChecked] = useState('public');
     const [title, setTitle] = useState("");
@@ -91,7 +93,7 @@ const InquiryWriteModal = forwardRef((props, ref) => {
                 <div className="flex flex-col gap-2">
                     <label className="font-bold after:ml-0.5 after:text-[var(--color-red)] after:content-['*']" htmlFor="title">제목</label>
                     <input 
-                        className="px-4 py-3 border border-[var(--color-gray-400)] focus:outline-none"
+                        className="px-4 py-3 border border-[var(--color-gray-400)]  bg-[var(--color-white)] focus:outline-none"
                         type="text" name="title" id="title" placeholder="제목을 입력해주세요." maxLength="50" required
                         onChange={(e)=>{ setTitle(e.target.value) }} />
                 </div>
@@ -99,7 +101,7 @@ const InquiryWriteModal = forwardRef((props, ref) => {
                 <div className="flex flex-col gap-2">
                     <label className="font-bold after:ml-0.5 after:text-[var(--color-red)] after:content-['*']" htmlFor="content">내용</label>
                     <textarea 
-                        className="px-4 py-3 border border-[var(--color-gray-400)] h-60 focus:outline-none"
+                        className="px-4 py-3 border border-[var(--color-gray-400)]  bg-[var(--color-white)] h-60 focus:outline-none"
                         name="content" id="content" placeholder="내용을 입력해 주세요." maxLength="1000" required
                         onChange={(e)=>{ setContet(e.target.value) }}
                     ></textarea>

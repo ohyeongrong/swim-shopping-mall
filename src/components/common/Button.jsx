@@ -1,12 +1,13 @@
 import clsx from "clsx";
 
-function Button({  content, variant = "primary", size = "lg", className = "", ...props }) {
+function Button({  content, variant = "primary", size = "lg", fontSize= "sm", className = "", ...props }) {
 
-    const baseStyle = "flex items-center justify-center text-sm";
+    const baseStyle = "flex items-center justify-center";
     
     const variants = {
         primary: " bg-[var(--color-black)] text-[var(--color-white)]",
-        secondary: "border border-[var(--color-black)] text-[var(--color-black)]",
+        secondary: "border border-[var(--color-black)] text-[var(--color-black)]  bg-[var(--color-white)]",
+        textBtn: "text-[var(--color-gray-500) underline"
     };
 
     const sizes = {
@@ -16,10 +17,17 @@ function Button({  content, variant = "primary", size = "lg", className = "", ..
         lg: "py-3.5",
         xl: "py-4",
     };
+    const fontSizes = {
+        xs: "text-xs",
+        sm: "text-sm",
+        md: "text-base",
+        lg: "text-lg",
+        xl: "text-xl",
+    };
 
     return (
         <button
-        className={ clsx(baseStyle, variants[variant], sizes[size], className) }
+        className={ clsx(baseStyle, variants[variant], sizes[size], fontSizes[fontSize], className) }
         {...props}
         >
             { content }

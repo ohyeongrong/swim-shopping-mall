@@ -11,7 +11,7 @@ function FullScreenModal({ modalContent, title, onClose, onSubmit, submitLabel }
     };
 
     return (
-        <div className="fixed z-2000 inset-0 bg-[var(--color-white)] py-5 px-4">
+        <div className="fixed z-2000 inset-0 lg:static lg:inset-auto lg:z-auto lg:bg-[var(--color-gray-100)] bg-[var(--color-white)] py-5 px-4">
             <div className="flex flex-col w-full max-h-full overflow-hidden">
 
                 <div className="flex justify-between items-center pb-5">

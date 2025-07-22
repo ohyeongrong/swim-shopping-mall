@@ -20,14 +20,17 @@ function MyLike() {
     const[onTabClick, setOnTapClick] = useState("product");
     
     return (
-        <section>
+        <section className="lg:max-w-[1440px] lg:m-auto">
+                <div className="hidden lg:block py-10">
+                    <h2 className="text-4xl font-bold">나의 관심</h2>
+                </div>
                 <TapList
                     tabList={myLikeTabs}
                     onTabClick={onTabClick}
                     onTabChange={setOnTapClick}
                 />
                 {/* 탭 리스트 콘텐츠 부분 */}
-                <div className="flex flex-col gap-4 py-6 px-[var(--spacing-16-32)]">
+                <div className="flex flex-col gap-4 py-6 px-4 md:px-2 lg:px-0">
                 {
                     likeList.length > 0
                     ? (
@@ -35,7 +38,7 @@ function MyLike() {
                             <div className="flex justify-end">
                                 <LikeSort />
                             </div>
-                            <div className="grid grid-cols-2 gap-x-2 gap-y-10 pb-10">
+                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-2 md:gap-x-4 lg:gap-x-6 gap-y-14 pb-10">
                                 {
                                     likeList.map((prd, i) => <ProductCard product={ prd } key={i}/>)
                                 }

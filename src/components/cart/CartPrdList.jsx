@@ -6,6 +6,7 @@ import ProductCard from "../common/ProductCard";
 import Button from '@/components/common/Button';
 import BottomActionBar from '@/components/common/BottomActionBar';
 import OptionBottomSheet from "../common/OptionBottomSheet";
+import { MoreArrowIcon } from "@/components/common/Icon";
 
 function CartPrdList() {
 
@@ -23,13 +24,29 @@ function CartPrdList() {
 
 
     return (
-        <>
+        
+        <div className="grid lg:grid-cols-6 lg:gap-16 lg:py-1 relative">
             {/* 카트 리스트 */}
-            <div className="text-sm flex flex-col gap-4 text-[var(--color-gray-700)] pb-10">
+            <div className="lg:col-span-4 text-sm lg:text-base flex flex-col gap-4 pb-10">
+                {/* 상단 타이틀 진행도 */}
+                <div className="hidden lg:flex justify-between py-10">
+                    <h2 className="text-4xl font-bold">장바구니</h2>
+                    <div className="flex items-center gap-2 font-bold">
+                        <p>01 장바구니</p>
+                        <div className="rotate-90">
+                            <MoreArrowIcon stroke="var(--color-gray-400)"/>
+                        </div>
+                        <p className="text-[var(--color-gray-400)]">02 주문서 작성</p>
+                        <div className="rotate-90">
+                            <MoreArrowIcon stroke="var(--color-gray-400)"/>
+                        </div>
+                        <p className="text-[var(--color-gray-400)]">03 주문완료</p>
+                    </div>
+                </div>
 
                 {/* 상품 선택, 삭제 */}
-                <div className="flex justify-between font-bold border-b-2 border-[var(--color-black)] py-3  px-[var(--spacing-16-32)]">
-                    <label className="flex gap-1.5" htmlFor="all-checked">
+                <div className="flex justify-between  font-bold border-b-2 border-[var(--color-black)] py-3  px-4 lg:px-0">
+                    <label className="flex items-center gap-1.5" htmlFor="all-checked">
                         <input
                             className="peer hidden"
                             type="checkbox" 
@@ -40,7 +57,7 @@ function CartPrdList() {
                         <CheckBoxIcon className="fill-[var(--color-gray-400)] peer-checked:fill-[var(--color-black)]" />
                         <p className="peer-checked:text-[var(--color-black)] flex items-center gap-1">전체 상품<span className="text-xs text-[var(--color-gray-500)]">{ cartList.length }</span></p>
                     </label>
-                    <div className="text-xs">
+                    <div className="text-xs lg:text-sm  text-[var(--color-gray-700)]">
                         <button 
                             type="button"
                             onClick={ removeChecked }
@@ -50,7 +67,7 @@ function CartPrdList() {
                 </div>
 
                 {/* 카트 제품 반복 구간 */}
-                <div className="flex flex-col gap-4.5 justify-between px-[var(--spacing-16-32)]">
+                <div className="flex flex-col gap-4.5 justify-between px-4 lg:px-0">
                     {
                         cartList.map((prd, i)=> {
                             return (
@@ -58,7 +75,7 @@ function CartPrdList() {
                                     <div className="w-full flex flex-col gap-4.5" key={prd.id + i}>
 
                                         <div className="flex justify-between font-bold">
-                                            <label className="flex gap-1.5" htmlFor={`item-checked-${prd.id}`}>
+                                            <label className="flex items-center  gap-1.5" htmlFor={`item-checked-${prd.id}`}>
                                                 <input 
                                                     className="peer hidden" 
                                                     id={`item-checked-${prd.id}`} 
@@ -80,7 +97,7 @@ function CartPrdList() {
                                         </div>
 
                                         {/* 제품 카드 */}
-                                        <ProductCard product={prd} direction='horizontal' showOption={true} showBrand={false} imgHeight="h-30"/>
+                                        <ProductCard product={prd} direction='horizontal' showOption={true} showBrand={false} imgHeight="h-30 lg:h-40"/>
                                         
                                         {/* 카트 제품 버튼 구간 */}
                                         <div className="flex justify-between gap-2">
@@ -146,9 +163,9 @@ function CartPrdList() {
                 </div>
                 
             </div>
-
+            <div className="border-t-8  border-[var(--color-gray-300)] lg:hidden"></div>       
             {/* 총 결제 금액 */}
-            <div className="border-t-8 text-[var(--color-black)] border-[var(--color-gray-300)] px-[var(--spacing-16-32)] flex flex-col gap-4 py-10">
+            <div className="lg:col-span-2 lg:border-l lg:border-[var(--color-gray-300)] text-[var(--color-black)]  px-4 lg:px-10 flex flex-col gap-4 py-10">
                 <ul>
                     <li className="flex justify-between items-center">
                         <strong>총 결제 금액</strong>
@@ -173,6 +190,11 @@ function CartPrdList() {
                         </span>
                     </li>
                 </ul>
+                <div className="pt-10">
+                    <Button 
+                        content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${cartList.length}개)`} 
+                        size="xl" className="w-full"/>
+                </div>
             </div>
 
             <BottomActionBar 
@@ -183,7 +205,7 @@ function CartPrdList() {
                 }
             />
 
-        </>
+        </div>
     )
 }
 
