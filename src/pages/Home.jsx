@@ -4,10 +4,21 @@ import SwiperSlider from "@/components/common/SwiperSlider";
 import { mainBannerList } from "@/data/mainBannerList";
 import BrandFilterList from "@/components/home/BrandFilterList";
 import BrandBanner from "@/components/home/BrandBanner";
+import axios from 'axios';
+import { useEffect } from "react";
+
 
 function Home() {
 
-    const { productsList } = useProdcutStore();
+    const { productsList, addProducts } = useProdcutStore();
+
+    useEffect(()=>{
+        axios.get('public/data/swimwearProducts.json')
+        .then(response => {addProducts(response.data)})
+        .catch(error => {
+            console.error('데이터 요청 중 에러 발생:', error );
+        })
+    },[])
 
 
     return (

@@ -17,9 +17,8 @@ function BrandFilterList() {
     
     const [brandMenu, setBrandMenu] = useState('전체');
 
-    const brandPrd = brandFilter(productsList, brandMenu);
+    const brandPrd = productsList.length > 0 ? brandFilter(productsList, brandMenu) : [];
 
-    
     return (
             <div className='flex flex-col gap-2 my-16'>
                 <div className='px-4'>

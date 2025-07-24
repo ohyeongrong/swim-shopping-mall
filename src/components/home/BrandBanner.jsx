@@ -21,7 +21,7 @@ function BrandBanner({ brand, img, title, subTitle }) {
                 </div>
             </div>
             <div className="flex gap-2">
-                { brandList.map((prd) => <ProductCard product={prd} direction='vertical'/>) }
+                { brandList.map((prd, i) => <ProductCard key={i} product={prd} direction='vertical'/>) }
             </div>
         </div>
     )

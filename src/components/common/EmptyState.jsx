@@ -8,6 +8,7 @@ function EmptyState({ type, link }) {
         { type: "mylike", message: "찜한 상품이 없습니다.", btnMessage: "취향에 맞는 상품 찾기"},
         { type: "inquiry", message: "문의 내역이 없습니다.", btnMessage: "상품 문의 작성하기"},
         { type: "cart", message: "장바구니에 담은 상품이 없습니다.", btnMessage: "쇼핑 계속하기"},
+        { type: "search", message: "검색어를 입력해주세요.", btnMessage: "쇼핑 계속하기"},
     ];
 
     const typeFind = emptyMessages.find((item) => item.type === type)
