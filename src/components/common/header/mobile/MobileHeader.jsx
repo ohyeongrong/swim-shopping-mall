@@ -14,6 +14,8 @@ function MobileHeader() {
     const { cartList } = useCartStore();
     const labelFind = iconLinkItems.find((item) => item.url === path);
     const isProduct = path.startsWith("/product");
+    const isJoin = path.endsWith('/join');
+    const isLogin = path.endsWith('/login')
 
     return (
         <header className="w-full">
