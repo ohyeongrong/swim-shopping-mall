@@ -1,10 +1,17 @@
+import useMemberStore from "@/store/useMemberStore";
+import Button from '@/components/common/Button';
+import { Link } from "react-router-dom";
+
 function Mypage() {
+
+    const { loginUser, logout } = useMemberStore();
+
     return (
         <section>
             <div className="bg-[var(--color-black)] text-white flex flex-col px-4 py-8 gap-6">
-                <div className="flex flex-col gap-1">
-                    <p className="text-2xl font-bold">가*다님</p>
-                    <p className="text-sm">로그아웃</p> 
+                <div>
+                    <p className="text-2xl font-bold">{ loginUser.name }님</p>
+                    <Button variant="textBtn" content="로그아웃" onClick={() => logout()}/> 
                 </div>
             </div>
             <div className="px-4 flex flex-col text-sm gap-4">
@@ -37,12 +44,16 @@ function Mypage() {
                 </div>
                 <div>
                     <div className="flex justify-between items-center border-b  border-[var(--color-gray-300)] pb-4">
-                        <h4 className="text-lg font-bold">나의 정보 관리</h4>
+                        <Link to={'/UserInfoPage'}>
+                            <h4 className="text-lg font-bold">나의 정보 관리</h4>
+                        </Link>
                     </div>
                 </div>
-                <div >
+                <div>
                     <div className="flex justify-between items-center border-b  border-[var(--color-gray-300)] pb-4">
-                        <h4 className="text-lg font-bold">나의 관심</h4>
+                        <Link>
+                            <h4 className="text-lg font-bold">나의 관심</h4>
+                        </Link>
                     </div>
                 </div>
             </div>

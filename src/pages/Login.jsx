@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Button from '@/components/common/Button';
 import useMemberStore from "@/store/useMemberStore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Login() {
 
-    const { getMemberByEmail, loginConfirm, login } = useMemberStore();
+    const { login, loginUser } = useMemberStore();
+
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,11 +25,11 @@ function Login() {
             return;
         }
 
-        console.log(login);
+        console.log(loginUser);
 
         setEmail('');
         setPassword('');
-        navigate('/')
+        navigate(location.state?.from || "/", { replace: true });
 
     }
 

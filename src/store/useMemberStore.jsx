@@ -1,8 +1,13 @@
+import ChangePassword from '@/pages/ChangePassword';
 import { create } from 'zustand'
 
 const useMemberStore = create((set, get) => ({
 
-    memberList : [],
+    memberList : [
+        { email: 'qwer@naver.com', password:'qwer1234', name:'다다다' },
+    ],
+
+    loginUser: null,
 
     getMemberByEmail: (email) => {
         return get().memberList.find(user => user.email === email);
@@ -17,28 +22,64 @@ const useMemberStore = create((set, get) => ({
             return false
         }
         set((state)=>({
-            memberList: [...state.memberList, newMember]
+            memberList: [...state.memberList, newMember],
+            loginUser : newMember
         }));
 
         return true
     },
 
-    loginMember: [],
+    withdraw: () => {
+        const currentUser = get().loginUser;
+
+        if (!currentUser) return false;
+
+        set((state)=>({
+            memberList : state.memberList.filter(user => user.email !== currentUser.email),
+            loginUser: null
+        }))
+    },
 
     login : (info) => {
         const email = info.email
         const password = info.password
 
-        const MemberConfirm = get().memberList.find(user => user.email === email && user.password === password)
+        const foundUser = get().memberList.find(user => user.email === email && user.password === password)
 
-        if(!MemberConfirm) return false
+        if(!foundUser) return false
 
-        set(() => ({loginMember : MemberConfirm}));
+        set(() => ({loginUser : foundUser}));
 
         return true
     },
 
-    logout : () => set(() => ({loginMember:[]})),
+    logout : () => set(() => ({ loginUser: null })),
+
+    changePassword: (newPwd, currentPwd) => {
+
+        const currentUser = get().loginUser;
+
+        if (!currentUser) return false;
+
+        if (currentUser.password !== currentPwd) return false;
+        if (currentUser.password === newPwd) return false;
+
+        set((state)=>({
+            memberList : state.memberList.map(user =>
+                user.email === currentUser.email
+                ? { ...user, password: newPwd}
+                : user
+            ),
+            loginUser: { ...currentUser, password: newPwd }
+        }))
+
+        return true;
+    },
+
+    confirmCurrentPwd: (currentPwd) => {
+        const loginUser = get().loginUser;
+        return loginUser && loginUser.password === currentPwd;
+    },
     
 }))
 

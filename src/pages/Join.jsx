@@ -37,7 +37,7 @@ function Join() {
         navigate('/')
     }
 
-    const handleConfirmPw = () => {
+    const handleConfirmPwd = () => {
         if(password !== confirmPassword){
             setPwErrMsg('비밀번호 정보가 일치하지 않습니다.')
         } else {
@@ -102,7 +102,7 @@ function Join() {
                         required
                         onChange={e => setConfirmPassword(e.target.value)}
                         value={confirmPassword}
-                        onBlur={handleConfirmPw}
+                        onBlur={handleConfirmPwd}
                         />
                     
                 </div>
