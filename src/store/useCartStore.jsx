@@ -39,12 +39,17 @@ const useCartStore = create((set, get) => ({
 
     removeCartList : (list) => set((state) => {
 
-    const prdFilter = state.cartList.filter(item => !(item.id === list.id && item.selectedOption === list.selectedOption))
+    const prdFilter = state.cartList.filter(item => !(item.id === list.id && item.selectedOption === list.selectedOption ))
 
     return {
         cartList : prdFilter
     }
 
+    }),
+
+    removeOderComplete : (list) => set((state)=>{
+        const idsToRemove = list.map(item => item.id);
+        return {cartList : state.cartList.filter(item => !idsToRemove.includes(item.id))}
     }),
 
     editOptQty : (selOpt, qty, selPrd) => set((state) => {
@@ -129,6 +134,10 @@ const useCartStore = create((set, get) => ({
         })
         }
     }),
+
+    getCheckedItems: () => {
+        return get().cartList.filter(item => item.checked);
+    },
 
     //가격 계산
 

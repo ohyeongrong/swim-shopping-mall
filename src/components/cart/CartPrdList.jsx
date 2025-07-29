@@ -7,6 +7,7 @@ import Button from '@/components/common/Button';
 import BottomActionBar from '@/components/common/BottomActionBar';
 import OptionBottomSheet from "../common/OptionBottomSheet";
 import { MoreArrowIcon } from "@/components/common/Icon";
+import { useNavigate } from "react-router-dom";
 
 function CartPrdList() {
 
@@ -21,6 +22,10 @@ function CartPrdList() {
     const [selectedPrd, setSelectedPrd] = useState(null);
     const [editSelOpt, setEditSelOpt] = useState("");
     const [editQty, setEditQty] = useState(1);
+
+    const checkedItems = cartList.filter(item => item.checked);
+
+    const navigate = useNavigate()
 
 
     return (
@@ -114,7 +119,12 @@ function CartPrdList() {
                                                 }}
                                                 />
 
-                                            <Button className="w-full"  size="sm" content="바로 구매"/>
+                                            <Button 
+                                                className="w-full"  
+                                                size="sm" 
+                                                content="바로 구매"
+                                                onClick={() => navigate('/order', { state: { products: [prd] } })}
+                                            />
                                         </div>
 
                                         <div className="border-b border-[var(--color-gray-300)]"></div>
@@ -190,18 +200,15 @@ function CartPrdList() {
                         </span>
                     </li>
                 </ul>
-                <div className="pt-10">
-                    <Button 
-                        content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${cartList.length}개)`} 
-                        size="xl" className="w-full"/>
-                </div>
             </div>
 
             <BottomActionBar 
                 content={ 
                     <Button 
-                    content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${cartList.length}개)`} 
-                    size="xl" className="w-full"/>
+                    content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${checkedItems.length}개)`} 
+                    size="xl" className="w-full"
+                    onClick={() => navigate('/order', { state: { products: checkedItems } })}
+                    />
                 }
             />
 

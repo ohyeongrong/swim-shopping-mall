@@ -13,6 +13,8 @@ import Login from '@/pages/Login'
 import Mypage from '@/pages/Mypage'
 import UserInfoPage from '@/pages/UserInfoPage';
 import ChangePassword from '@/pages/ChangePassword';
+import Order from '@/pages/Order';
+import OrderComplete from '@/pages/OrderComplete';
 
 
 
@@ -29,8 +31,10 @@ function App() {
               <Route path='/mypage' element={<ProtectedRoute><Mypage/></ProtectedRoute>} />
               <Route path='/UserInfoPage' element={<UserInfoPage/>}/>
               <Route path='/ChangePassword' element={<ChangePassword/>}/>
-              <Route path='join' element={<Join/>} />
-              <Route path='login' element={<Login/>} />
+              <Route path='/join' element={<Join/>} />
+              <Route path='/login' element={<Login/>} />
+              <Route path='/order' element={<Order/>} />
+              <Route path='/OrderComplete' element={<OrderComplete/>} />
             </Route>
 
             {/* 에러페이지 만들기 */}
