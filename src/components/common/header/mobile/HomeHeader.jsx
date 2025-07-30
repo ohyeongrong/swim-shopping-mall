@@ -8,7 +8,7 @@ function HomeHeader() {
     const { cartList } = useCartStore();
 
     return (
-        <header className="w-full">
+        <div className="w-full lg:hidden">
                 <div className="py-3 px-4">
                     <div className="flex justify-between items-center">
                         <div>
@@ -30,7 +30,7 @@ function HomeHeader() {
                         </nav>
                     </div>
                 </div>
-        </header>
+        </div>
     );
 }
 

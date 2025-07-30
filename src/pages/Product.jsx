@@ -12,6 +12,10 @@ import useCartStore from "@/store/useCartStore";
 import OptionBottomSheet from "@/components/common/OptionBottomSheet";
 import OptionSelectorPC from "@/components/common/OptionSelectorPC";
 
+import { useMediaQuery } from 'react-responsive';
+import ThumbSwiperSlider from "@/components/common/ThumbSwiperSlider";
+
+
 
 
 function Product() {
@@ -63,6 +67,8 @@ function Product() {
         return 0
     }
 
+    const isMobile = useMediaQuery({ maxWidth: 1024 });
+
     return (
         <>
             <section className="lg:max-w-[1440px] lg:m-auto relative">
@@ -70,7 +76,12 @@ function Product() {
                 <div className="grid grid-cols-1 lg:grid-cols-5">
                     {/* 상품 섬네일 */}
                     <div className="order-1 flex flex-col gap-8 col-span-3 lg:pb-30">
-                        <SwiperSlider imageList={thumImg} paginationType={'progressbar'} sildeView="1"/>
+                        {
+                            isMobile 
+                            ? <SwiperSlider imageList={thumImg} paginationType={'progressbar'} sildeView="1"/>
+                            : <ThumbSwiperSlider imageList={thumImg} />
+                        }
+                        
                     </div>
                     {/* 상품 기본 정보 */}
                     <aside className="order-2 col-span-2 p-4 lg:p-16 pb-8 flex flex-col gap-2 lg:gap-4 lg:sticky top-10 self-start">

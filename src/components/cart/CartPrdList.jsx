@@ -37,9 +37,9 @@ function CartPrdList() {
                 <div className="hidden lg:flex justify-between py-10">
                     <h2 className="text-4xl font-bold">장바구니</h2>
                     <div className="flex items-center gap-2 font-bold">
-                        <p>01 장바구니</p>
+                        <p >01 장바구니</p>
                         <div className="rotate-90">
-                            <MoreArrowIcon stroke="var(--color-gray-400)"/>
+                            <MoreArrowIcon />
                         </div>
                         <p className="text-[var(--color-gray-400)]">02 주문서 작성</p>
                         <div className="rotate-90">
@@ -175,7 +175,7 @@ function CartPrdList() {
             </div>
             <div className="border-t-8  border-[var(--color-gray-300)] lg:hidden"></div>       
             {/* 총 결제 금액 */}
-            <div className="lg:col-span-2 lg:border-l lg:border-[var(--color-gray-300)] text-[var(--color-black)]  px-4 lg:px-10 flex flex-col gap-4 py-10">
+            <div className="lg:col-span-2 lg:border-l lg:border-[var(--color-gray-300)] text-[var(--color-black)]  px-4 lg:px-10 flex flex-col gap-4 py-10 lg:mt-25">
                 <ul>
                     <li className="flex justify-between items-center">
                         <strong>총 결제 금액</strong>
@@ -200,6 +200,11 @@ function CartPrdList() {
                         </span>
                     </li>
                 </ul>
+                <Button 
+                    content={`${(getTotalProductPrice() - getTotalDiscount()).toLocaleString()}원 주문하기 (${checkedItems.length}개)`} 
+                    size="xl" className="w-full hidden lg:block"
+                    onClick={() => navigate('/order', { state: { products: checkedItems } })}
+                />
             </div>
 
             <BottomActionBar 

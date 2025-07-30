@@ -1,10 +1,10 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { Link } from 'react-router-dom';
 import { SearchIcon, MenuIcon } from "@/components/common/Icon"
-import { useState } from 'react';
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import useProdcutStore from "@/store/useProdcutStore";
+import useSearchStore from "@/store/useSearchStore";
+import { useEffect, useState } from "react";
 
-function Gnb({ showGnb }) {
+function PcGnb() {
 
     const gnbMenus = [
         { name: '홈', link: '/' },
@@ -23,35 +23,35 @@ function Gnb({ showGnb }) {
     const firstHalf = gnbMenus.slice(0, 5);
     const secondHalf = gnbMenus.slice(5);
 
+    const navigate = useNavigate();
+
+    const [searchParams, setSearchParams] = useSearchParams();
+    const keyword = searchParams.get("keyword");
+    const [inputValue, setInputValue] = useState(keyword);
+
+    const { productsList } = useProdcutStore();
+    const { keywordFilter, resetSearchList } = useSearchStore();
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(!inputValue.trim()) return;
+        navigate(`/search?keyword=${inputValue}`)
+    }
+
+    useEffect(()=>{
+        if(keyword) {
+            keywordFilter(productsList, keyword)
+            setInputValue(keyword)
+        } else {
+            resetSearchList();
+            setInputValue("")
+        }
+    }, [productsList, keyword])
+
     return (
         <>
-        { showGnb &&
-            (
-                    //모바일 전용 글로벌 네비게이션
-                <div className="text-sm lg:hidden">
-                    <div>
-                        <Swiper slidesPerView="auto"
-                                freeMode={true}
-                                className='!pl-6'>
-                            {
-                                gnbMenus.map((menu, i) => 
-                                    <SwiperSlide key={i} className="!w-auto relative"> 
-                                        <Link className={`inline-block pr-6 pt-2.5 pb-3 whitespace-nowrap ${menu.name !== '홈' && "text-[var(--color-gray-500)]"}`}>
-                                            {menu.name}
-                                        </Link>
-                                        {menu.name === '베스트' && <div className='absolute top-2.5 right-4.5 w-1 h-1 bg-[var(--color-main)] rounded-full'></div>
-                            }
-                                    </SwiperSlide>
-                                )
-                            }
-                        </Swiper>
-                    </div>
-                </div>
-            )
-        }
-
             {/* PC 전용 글로벌 네비게이션 */}
-            <div className="hidden lg:flex justify-between px-4 py-3 text-sm border-b border-gray-200 lg:max-w-[1440px] lg:m-auto">
+            <div className="hidden lg:flex justify-between py-3 text-sm  lg:max-w-[1440px] lg:m-auto">
                 <div className='flex gap-8'>
                     <ul className="flex items-center gap-4 text-xl">
                         <li><MenuIcon/></li>
@@ -82,19 +82,26 @@ function Gnb({ showGnb }) {
                         ))}
                     </ul>
                 </div>
-                <div className="relative">
-                    <input
-                        type="text"
-                        placeholder="올 여름 신상 아이템"
-                        className="w-80 h-10 border-b focus:outline-none  placeholder:text-[var(--color-gray-500)]"
-                    />
-                    <div className='absolute top-2 right-2'>
-                        <SearchIcon  width="20" height='20'/>
-                    </div>
+                <div className="relative border-b w-70">
+                    <form  onSubmit={ handleSubmit }>
+                        <label htmlFor="search" className="flex items-center">
+                            <input 
+                                value={ inputValue }
+                                type="search" 
+                                id="search" 
+                                className="w-full focus:outline-none  placeholder:text-sm"
+                                placeholder="검색어를 입력해주세요."
+                                onChange={e => { setInputValue(e.target.value) }}
+                            />
+                            <button type="submit">
+                                <SearchIcon />
+                            </button>
+                        </label>
+                    </form>
                 </div>
             </div>
         </>
     );
 }
 
-export default Gnb
+export default PcGnb

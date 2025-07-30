@@ -22,7 +22,12 @@ function Search() {
     const[onTabClick, setOnTapClick] = useState("product");
 
     return (
-        <section>
+        <section className="lg:max-w-[1440px] lg:m-auto">
+            <div className="hidden lg:block py-10">
+                <h2 className="text-4xl font-bold">
+                    검색 상품
+                </h2>
+            </div>
 
             <TapList
                 tabList={searchTabs}
@@ -36,9 +41,6 @@ function Search() {
                     searchList.length > 0 
                     ? (
                         <>
-                            <div className="flex justify-end">
-                                <LikeSort />
-                            </div>
                             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-2 md:gap-x-4 lg:gap-x-6 gap-y-14 pb-10">
                                 {
                                     searchList.map((prd, i) => <ProductCard product={ prd } key={i}/>)

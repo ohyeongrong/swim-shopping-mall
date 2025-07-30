@@ -6,6 +6,7 @@ import BottomNavBar from "@/components/common/BottomNavBar";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import useSearchStore from "@/store/useSearchStore";
+import PcHeader from "./header/PcHeader";
 
 function Layout() {
 
@@ -19,6 +20,7 @@ function Layout() {
     return (
         <>
             <Header />
+            <PcHeader />
             <main className="min-h-screen">
                 <Outlet />
             </main>

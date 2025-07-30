@@ -12,7 +12,7 @@ function SwiperSlider({ sildeView = "auto", imageList, paginationType, renderSli
 
     return (
         <section>
-            <div>
+            <div className='relative'>
                 <Swiper
                     slidesPerView={ sildeView }
                     modules={[Pagination, Autoplay]}
@@ -28,6 +28,7 @@ function SwiperSlider({ sildeView = "auto", imageList, paginationType, renderSli
                     observer={true}
                     observeParents={true}
                     {...options}
+                    
                 >
                     { imageList.map((item, i) => (
                         <SwiperSlide key={i}>
@@ -36,7 +37,7 @@ function SwiperSlider({ sildeView = "auto", imageList, paginationType, renderSli
                                 : typeof item === 'string'
                                 ? (
                                     // 단순 이미지 배열
-                                    <div className='relative aspect-[3/4]'>
+                                    <div className='aspect-[3/4]'>
                                         <img
                                             src={item}
                                             alt=""
@@ -45,7 +46,7 @@ function SwiperSlider({ sildeView = "auto", imageList, paginationType, renderSli
                                     </div>
                                 ) : (
                                     // 객체 배열 처리 (기본 배너 형식)
-                                    <div className='relative aspect-[3/4]'>
+                                    <div className='aspect-[3/4]'>
                                         <img
                                             src={item.image}
                                             alt={item.title || ""}

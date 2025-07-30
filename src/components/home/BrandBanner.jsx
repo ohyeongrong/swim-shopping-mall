@@ -9,7 +9,7 @@ function BrandBanner({ brand, img, title, subTitle }) {
     const brandList = productsList.filter(item => item.brand === brand);
 
     return(
-        <div className="flex flex-col gap-4 my-16 lg:mb-40 flex-1">
+        <div className="px-4 lg:px-0 flex flex-col gap-4 my-16 lg:mb-40 flex-1">
             <div className="relative">
                 <div className='aspect-[4/5]'>
                     <img className='w-full h-full object-cover' src={img} alt={brand} />

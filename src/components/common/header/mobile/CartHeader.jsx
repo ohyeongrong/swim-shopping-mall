@@ -4,7 +4,7 @@ import { BackBtn } from "@/components/common/header/mobile/BackBtn";
 
 function CartHeader() {
     return (
-        <header className="w-full">
+        <div className="w-full lg:hidden">
             <div className="py-3 px-4">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
@@ -22,7 +22,7 @@ function CartHeader() {
                     </nav>
                 </div>
             </div>
-        </header>
+        </div>
     );
 }
 

@@ -32,7 +32,7 @@ function SearchHeader() {
     }, [productsList, keyword])
 
     return (
-            <header className="w-full border-b border-[var(--color-gray-300)]">
+            <div className="w-full border-b border-[var(--color-gray-300)] lg:hidden">
                 <div className="py-3 lg:hidden px-4">
                     <div className="flex items-center gap-3.5">
                         <button type="button" onClick={() => navigate(-1)}>
@@ -56,7 +56,7 @@ function SearchHeader() {
                         <CartBtn/>
                     </div>
                 </div>
-            </header>
+            </div>
     );
 }
 
