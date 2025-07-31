@@ -5,7 +5,7 @@ React 기반으로 만든 개인 쇼핑몰 프로젝트입니다.
 React 생태계와 상태 관리, 라우팅, UI 구현 경험을 쌓았습니다.
 
 ## 🔗 배포 링크
-[https://swim-mall.vercel.app](https://swim-mall.vercel.app)
+[https://ohyeongrong.github.io/swim-shopping-mall](https://ohyeongrong.github.io/swim-shopping-mall)
 
 ## 📂 GitHub 레포지토리
 [https://github.com/ohyeongrong/swim-shopping-mall](https://github.com/ohyeongrong/swim-shopping-mall)
