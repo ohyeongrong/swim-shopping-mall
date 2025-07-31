@@ -13,7 +13,7 @@ React 생태계와 상태 관리, 라우팅, UI 구현 경험을 쌓았습니다
 ---
 
 ## 📌 프로젝트 소개
-- **개발 기간**: 2025.07 ~ 2025.08
+- **개발 기간**: 2025.06 ~ 2025.07
 - **기술 스택**:  
   - **Frontend**: React, React Router, Zustand, Tailwind CSS
   - **API 통신**: Axios (Mock API)
