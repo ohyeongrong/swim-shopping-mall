@@ -16,7 +16,7 @@ function ThumbSwiperSlider({ imageList }) {
                 modules={[Thumbs]}
                 thumbs={{ swiper: thumbsSwiper }}
                 slidesPerView={1}
-                className='!min-w-[700px]'
+                className='!min-w-[750px]'
             >
                 { imageList.map((src, i) => (
                     <SwiperSlide key={i}>
@@ -37,7 +37,7 @@ function ThumbSwiperSlider({ imageList }) {
                 slidesPerView="auto"
                 watchSlidesProgress
                 direction="vertical"
-                className="!h-[500px]"
+                className="!h-[800px]"
             >
                 { imageList.map((src, i) => (
                     <SwiperSlide 

@@ -1,5 +1,4 @@
 import useMyLikeStore from "../store/useMyLikeStore";
-import LikeSort from "../components/LikeSort"
 import ProductCard from '@/components/common/ProductCard'
 import { useState } from "react";
 import EmptyState from "@/components/common/EmptyState";
@@ -35,9 +34,6 @@ function MyLike() {
                     likeList.length > 0
                     ? (
                         <>
-                            <div className="flex justify-end">
-                                <LikeSort />
-                            </div>
                             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-2 md:gap-x-4 lg:gap-x-6 gap-y-14 pb-10">
                                 {
                                     likeList.map((prd, i) => <ProductCard product={ prd } key={i}/>)

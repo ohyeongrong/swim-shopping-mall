@@ -1,6 +1,5 @@
 import usePrdReviewStore from "@/store/usePrdReviewStore"
 import useFilterPrdPost from "@/hooks/useFilterPrdPost";
-import LikeSort from "../LikeSort";
 import { StarIcon } from "@/components/common/Icon";
 import Button from '@/components/common/Button';
 

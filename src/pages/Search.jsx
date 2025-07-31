@@ -4,7 +4,6 @@ import useProdcutStore from "@/store/useProdcutStore";
 import useSearchStore from "@/store/useSearchStore";
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import LikeSort from "@/components/LikeSort"
 import EmptyState from "@/components/common/EmptyState";
 
 function Search() {
